@@ -1,37 +1,22 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-November 08, 2018
-</td>
-</tr><table>
-
-
-
 [Go to Overview Page](readme.md)
 
-![](/Users/jleemans/dev/github/EventLabs/common/images/customer.logo2.png)
+![](images/customer.logo2.png)
 
 ## Microservices on ATP
 
 ## Part 1 - Provisioning an Autonomous Transaction Processing Database
 
 
-## Introduction
+#### Introduction
 
 This lab walks you through the steps to get started using the Oracle Autonomous Transaction Processing Database on Oracle Cloud Infrastructure (OCI). You will provision a new database.
 
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github Oracle repository issue submission form.
-
-## Objectives
+#### Objectives
 
 - Learn how to sign-in to the Oracle Cloud
 - Learn how to provision a new ATP database
 
-## Required Artifacts
 
-- The following lab requires an Oracle Public Cloud account. You may use your own cloud account, a cloud account that you obtained through a trial, or a training account whose details were given to you by an Oracle instructor.
-
-# Provisioning an Autonomous Transaction Processing Database Instance
-
-In this section you will be provisioning an ATP database using the cloud console.
 
 ## Steps
 
