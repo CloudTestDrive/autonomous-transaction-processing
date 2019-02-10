@@ -1,10 +1,17 @@
 <table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
 November 08, 2018
 </td>
-<td class="td-banner">
-# Lab 1: Provisioning an Autonomous Transaction Processing Database
-</td></tr><table>
+</tr><table>
+
+
+
+[Go to Overview Page](readme.md)
+
+![](/Users/jleemans/dev/github/EventLabs/common/images/customer.logo2.png)
+
+## Microservices on ATP
+
+## Part 1 - Provisioning an Autonomous Transaction Processing Database
 
 
 ## Introduction
@@ -130,11 +137,13 @@ WElcome_123#
 
 - License Type: You will see 2 options under licensing options. 
 
-#### My organization already owns Oracle database software licenses: Oracle allows you to bring your unused on-prem licenses to the cloud and your instances are billed at a discounted rate. This is the default option so ensure you have the right license type for this subscription.
+**My organization already owns Oracle database software licenses**: Oracle allows you to bring your unused on-prem licenses to the cloud and your instances are billed at a discounted rate. This is the default option so ensure you have the right license type for this subscription.
 
 ![](./images/100/Picture100-34.jpeg)
 
-#### Subscribe to new database software licenses and the database cloud service: Your cloud service instance should include database license. This is an all-inclusive cost and you do not need to bring any additional licenses to cloud.
+
+
+**Subscribe to new database software licenses and the database cloud service**: Your cloud service instance should include database license. This is an all-inclusive cost and you do not need to bring any additional licenses to cloud.
 
 ![](./images/100/Picture100-35.jpeg)
 
@@ -165,10 +174,11 @@ You now have created your first Autonomous Transaction Processing Cloud instance
 
 -   You are now ready to move to the next lab.
 
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
+
+
+
+
+------
+
+[Go to Overview Page](readme.md)
+
