@@ -4,16 +4,16 @@
 
 # Microservices on ATP
 
-# Part 2: Secure Connectivity and Data Access
-## Introduction
+## Part 2: Secure Connectivity and Data Access
+#### **Introduction**
 
 In this lab we will configure a secure connection using Oracle SQL Developer.
 
-## Objectives
+#### **Objectives**
 
 - Learn how to configure a secure connection using Oracle SQL Developer
 
-## Required Artifacts
+#### **Required Artifacts**
 
 - You have installed Oracle SQL Developer 18.3. If you do not have SQL Developer 18.3, you can download from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
 

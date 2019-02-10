@@ -2,16 +2,16 @@
 
 ![](images/customer.logo2.png)
 
-## Microservices on ATP
+# Microservices on ATP
 
 ## Part 1 - Provisioning an Autonomous Transaction Processing Database
 
 
-#### Introduction
+#### **Introduction**
 
 This lab walks you through the steps to get started using the Oracle Autonomous Transaction Processing Database on Oracle Cloud Infrastructure (OCI). You will provision a new database.
 
-#### Objectives
+#### **Objectives**
 
 - Learn how to sign-in to the Oracle Cloud
 - Learn how to provision a new ATP database

@@ -1,51 +1,32 @@
 <table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-
 November 08, 2018
 </td>
 <td class="td-banner">
+
 # Lab 4: Data Loading into ATP
 </td></tr><table>
 
 ## Introduction
 
-In this lab, you will be uploading files to the Oracle Cloud Infrastructure (OCI) Object Storage, creating sample tables, loading data into them from files on the OCI Object Storage.
+In this lab, you will be creating a few tables and inserting data into the ATP database using the CI/CD features of Developer Cloud.  We'll use the Build engine of DevCS to set up a flow that will create the necessary objects in the database, and insert data into the tables.  In case these elements are changed in the repository, the script will trigger again and re-create the database elements.
 
-You can load data into Autonomous Transaction Processig Database using Oracle Database tools, and Oracle and 3rd party data integration tools.
+In real life, you would want to set up a more sophisticated logic to manage your database objects, see [these blogs on the topic by Shay Schmeltzer](https://blogs.oracle.com/shay/devcs).
 
-You can load data:
-- From files local to your client computer
-- From files stored in a cloud-based object store
 
-For the fastest data loading experience Oracle recommends uploading the source files to a cloud-based object store, such as Oracle Cloud Infrastructure Object Storage, before loading the data into your Autonomous Transaction Processing Database.
-
-To load data from files in the cloud into your Autonomous Transaction Processing database, use the new PL/SQL DBMS_CLOUD package. The DBMS_CLOUD package supports loading data files from the following Cloud sources: Oracle Cloud Infrastructure Object Storage, Oracle Cloud Infrastructure Object Storage Classic, and Amazon AWS S3.
-
-This lab shows how to load data from Oracle Cloud Infrastructure Object Storage using two of the procedures in the DBMS_CLOUD package:
-
-- Create_credential: Stores the object store credentials in your Autonomous Transaction Processing database schema.
-- You will use this procedure to create object store credentials in your ATP admin schema.
-- You will use this procedure to load tables in your admin schema with data from data files staged in the Oracle Cloud Infrastructure Object Storage cloud service.
-
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
-- Learn how to use the SQL Developer Data Import Wizard
-- Learn how to upload files to the OCI Object Storage
-- Learn how to define object store credentials for ATP
-- Learn how to create tables in your database
-- Learn how to load data from the Object Store
+- Set up your ATP Wallet in Developer Cloud
+- Create and run a Build to create your database objects
+- Validate reation via SQLDeveloper
 
-## Required Artifacts
 
-- Please ensure you are connected to your cloud account and have provisioned an ATP instance. Refer <a href="./LabGuide100ProvisionAnATPDatabase.md" target="_blank">LabGuide1.md</a>
-- You have installed Oracle SQL Developer. You can download SQL Developer 18.3 [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) and follow the instructions to complete the installation.
 
 ## Steps
 
-### **STEP 1: Download the sample data files to your local computer**
+### **STEP 1: Set up your ATP Wallet in Developer Cloud**
 
-- For this lab, you will need a handful of data files.  Click <a href="./files/datafiles.zip" target="_blank">here</a> to download a zipfile of the 2 sample data files for you to upload to the object store. Unzip it to a directory on your local computer.
+In the ATP Connection For this lab, you will need a handful of data files.  Click <a href="./files/datafiles.zip" target="_blank">here</a> to download a zipfile of the 2 sample data files for you to upload to the object store. Unzip it to a directory on your local computer.
 
 You will see:
 - Customer data: **customers.csv**
@@ -165,17 +146,17 @@ Construct the URL that points to the location of the customers.csv file staged i
  https://swiftobjectstorage.<**region_name**>.oraclecloud.com/v1/<**tenant_name**>/<**bucket_name**>/<**file_name**>
 
  region_name: Type in the region you have created your Object storage in.
- 
+
  tenant_name: Type in your tenancy name.
- 
+
  bucket_name: Type in your bucket name which you created in Object Storage.
- 
+
  file_name: customers.csv
 
  In the below example of constructed URL, the region name is us-seattle-1, the tenant name is r1atpdemo6, and the bucket name is ATPLab. So the URL of the customers.csv file is:
- 
+
  https://swiftobjectstorage.us-seattle-1.oraclecloud.com/v1/r1atpdemo6/ATPLab/customers.csv
- 
+
  Yours would be different, please change the above mentioned details and save your URL.
 
 ![](images/400/ConstructURLs.png) 

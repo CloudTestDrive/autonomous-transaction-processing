@@ -1,6 +1,6 @@
 [Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)
 
-![](/Users/jleemans/dev/github/EventLabs/common/images/customer.logo2.png)
+![](images/customer.logo2.png)
 
 # Microservices on Kubernetes and Autonomous Database
 
@@ -18,7 +18,7 @@ If you are running these labs on your own, please check out the instructions on 
 
 ### Preparation steps for this lab exercise - *<u>only for personal tenancies</u>*
 
-In order to run this lab, you need to have a running instance of the Developer Cloud Service and an OKE Container Cluster in your cloud tenancy.  In case you are executing this lab on an environment provided by an instructor, this setup will most likely have been performed already. 
+In order to run this lab, you need to have a running instance of the Developer Cloud Service and an OKE Container Cluster in your cloud tenancy.  In case you are executing this lab on an environment provided by an instructor, this setup will most likely have been performed already.
 
 In case you are running this lab on your own Cloud Tenancy, you might need to go through the following steps:
 
@@ -37,7 +37,7 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 - [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
 
-- [Setting up your Developer Cloud for this project](LabGuide150Devcs_setup.md)
+- [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
 
 
 
