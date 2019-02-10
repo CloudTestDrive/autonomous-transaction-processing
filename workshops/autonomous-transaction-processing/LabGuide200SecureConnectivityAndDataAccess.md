@@ -1,18 +1,13 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
+[Go to Overview Page](README.md)
 
-November 08, 2018
-</td>
-<td class="td-banner">
-# Lab 2: Secure Connectivity and Data Access
-</td></tr><table>
+![](images/customer.logo2.png)
 
+# Microservices on ATP
+
+# Part 2: Secure Connectivity and Data Access
 ## Introduction
 
-Autonomous Transaction Processing provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized for transaction processing workloads. Oracle Autonomous Transaction Processing ( or ATP ) service provisions in a few minutes and requires  very little manual ongoing administration.
-
 In this lab we will configure a secure connection using Oracle SQL Developer.
-
-To **log issues**, click [here](https://github.com/oracle/learning-library/issues/new) to go to the github oracle repository issue submission form.
 
 ## Objectives
 
@@ -20,8 +15,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 
 ## Required Artifacts
 
-- Please ensure you are connected to your cloud account and have provisioned an ATP instance. Refer <a href="./LabGuide100ProvisionAnATPDatabase.md" target="_blank">here</a> on how provision an ATP database.
-- You have installed Oracle SQL Developer 18.3. If you donot have SQL Developer 18.3, you can download from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
+- You have installed Oracle SQL Developer 18.3. If you do not have SQL Developer 18.3, you can download from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
 
 
 ## Steps
@@ -41,7 +35,7 @@ To **log issues**, click [here](https://github.com/oracle/learning-library/issue
 ![](./images/200/Picture200-2.png)
 
 - Click on **Download** to supply a password for the wallet and download your client credentials.
-#### Please use below Keystore password to download the client credentials
+#### Example password:
 
 ```
 WElcome_123#
@@ -53,7 +47,7 @@ WElcome_123#
 
 - The credentials zip file contains the encryption wallet, Java keystore and other relevant files to make a secure TLS 1.2 connection to your database from client applications. Store this file in a secure location.
 
-### **STEP 2: Connect to ATP instance using Oracle SQL Developer**
+### **STEP 2: Connect to the ATP instance with SQL Developer**
 
 - Launch SQL Developer from the desktop and click Add Connection on top left.
 
@@ -65,7 +59,7 @@ Enter the following in New database connection
 
 **Username**: admin
 
-**Password**: WElcome_123#
+**Password**: your ATP database password
 
 **Connection Type**: Cloud Wallet
 
@@ -85,14 +79,15 @@ Click on **Connect**. You now have a secure connection to your cloud database.
 
 ![](./images/200/Picture200-10.png)
 
-You now have connected your Autonomous Transaction Processing Cloud instance to Oracle SQL Developer.
+You have connected your Autonomous Transaction Processing Cloud instance to Oracle SQL Developer.
 
 -   You are now ready to move to the next lab.
 
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
+
+
+
+
+------
+
+[Go to Overview Page](README.md)
+

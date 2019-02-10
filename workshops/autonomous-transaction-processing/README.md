@@ -1,76 +1,57 @@
-<table class="tbl-heading"><tr><td class="td-logo">[![](images/obe_tag.png)](README.md)
+[Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)
 
-Last Updated:<br>November 08, 2018
-</td>
-<td class="td-banner">
-# Getting Started with Autonomous Transaction Processing
-</td></tr><table>
+![](/Users/jleemans/dev/github/EventLabs/common/images/customer.logo2.png)
 
+# Microservices on Kubernetes and Autonomous Database
 
-This workshop walks you through all the steps to get started using the **Oracle Autonomous Transaction Processing**. Provision a database, scale ATP, load data, configure node.js with ATP, configure Java with ATP, working with REST APIs, building microservices on ATP, Configuring OCI CLI, working with Kubernetes and rapid application development with ATP.
+## Setting up a CI/CD environment for developing Microservices on an ATP Database, with Developer Cloud
 
-## Goals for this workshop
+## Introduction
 
-- Provision an ATP Database on Oracle Cloud Infrastructure
-- Configure a secure connection using Oracle SQL Developer
-- Scaling an ATP Database
-- Loading data into ATP Database
-- Configure node.js app with ATP
-- Configure Java with ATP
-- Working with REST APIs
-- Building Microservices on ATP
-- Configure OCI-CLI
-- Rapid Application Development with Oracle ATP
+This lab will walk you through the steps to set up a CI/CD environment for developing Microservices, based on the automation possible in Developer Cloud and deploying all components on Oracle's Managed Container platform and the ATP database.
 
-# How to Get Your Free Cloud Trial Account
-Please click on the following link to create your <a class=“trial-link” href="https://myservices.us.oraclecloud.com/mycloud/signup?language=en&sourceType=:ex:tb:::RC_NAMK181011P00041:ATPHOL&SC=:ex:tb:::RC_NAMK181011P00041:ATPHOL&pcode=NAMK181011P00041" target="_trial">Free Account</a>, and complete all the required steps to get your free Oracle Cloud Trial Account. When you complete the registration process you'll receive a $300 credit that will enable you to complete the lab for free.  Additionally, you'll have 1000s of hours left over to continue to explore the Oracle Cloud.
+## Prerequisites
 
-  - Soon after requesting your trial you will receive the following email. You may begin working on Lab 100.
+To run these labs you will need access to an Oracle Cloud Account.  If you are participating in a live event, your instructor will provide you the required credentials.
 
-  ![](images/readme/code_9.png)
+If you are running these labs on your own, please check out the instructions on the [Oracle Cloud Adventure page](https://cloudtestdrive.github.io/Trial.html) to learn how to get a [Trial account](https://myservices.us.oraclecloud.com/mycloud/signup?sourceType=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&SC=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&pcode=EMMK181016P00010) or how to set up your corporate UC subscription for this lab.
+
+### Preparation steps for this lab exercise - *<u>only for personal tenancies</u>*
+
+In order to run this lab, you need to have a running instance of the Developer Cloud Service and an OKE Container Cluster in your cloud tenancy.  In case you are executing this lab on an environment provided by an instructor, this setup will most likely have been performed already. 
+
+In case you are running this lab on your own Cloud Tenancy, you might need to go through the following steps:
+
+- Setting up a Developer Cloud Instance: [click here for a guide](devcsconfig.md) describing these steps in detail.
+- Setting up a Container Cluster (OKE): [detailed instructions can be found on this location](tbd)
 
 
-Detailed instruction on using the image are provided in <a href="./LabGuide1000AppDev.md" target="_blank">LabGuide10</a>
+
+## Components of this lab
+
+This lab is composed of the steps outlined below.  Please walk through the various labs in a sequential order, as the different steps depend on each other:
+
+- [Provisioning an Autonomous Transaction Processing Database Instance](LabGuide100ProvisionAnATPDatabase.md)  using the OCI Console (manual).
+
+  Note: Creation of the ATP via Terraform is also an option.   detailed instructions will be added in the next iteration*
+
+- [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
+
+- [Setting up your Developer Cloud for this project](LabGuide150Devcs_setup.md)
 
 
-# Workshop Overview
-
-## Before You Begin
-**What is an Autonomous Transaction Processing?**
-
-Oracle Autonomous Transaction Processing delivers a self-driving, self-securing, self-repairing database service that can instantly scale to meet demands of mission critical transaction processing and mixed workload applications.  
-
-Read on to begin your Getting Started journey with Oracle Autonomous Transaction Processing.
-
-**You are all set, let's begin!**
 
 
-## Lab 1: Provisioning an Autonomous Transaction Processing Database
-
-**Key Objectives**:
-
-- Learn how to sign-in to the Oracle Public Cloud
-- Learn how to provision a new ATP database
-
-**[Click here to run Lab 1](LabGuide100ProvisionAnATPDatabase.md)**
 
 
-## Lab 2: Secure Connectivity and Data Access
 
-**Key Objectives**:
+---
 
-- Learn how to configure a secure connection using Oracle SQL Developer
-
-**[Click here to run Lab 2](LabGuide200SecureConnectivityAndDataAccess.md)**
+---
 
 
-## Lab 3: Scaling an ATP instance
 
-**Key Objectives**:
 
-- Learn how to scale an ATP instance
-
-**[Click here to run Lab 3](LabGuide300ScaleAnATP.md)**
 
 
 ## Lab 4: Data Loading into ATP
@@ -148,9 +129,8 @@ Read on to begin your Getting Started journey with Oracle Autonomous Transaction
 
 **[Click here to go through Appendix](Appendix.md)**
 
-## Learn More About Autonomous Transaction Processing...
 
-Use these links to get more information about Oracle Autonomous Transaction Processing
 
-- [Oracle Autonomous Transaction Processing Cloud Website](https://www.oracle.com/database/autonomous-transaction-processing.html)
-- [Oracle Autonomous Transaction Processing Cloud docs](https://docs.oracle.com/en/cloud/paas/atp-cloud/index.html)
+---
+
+[Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)

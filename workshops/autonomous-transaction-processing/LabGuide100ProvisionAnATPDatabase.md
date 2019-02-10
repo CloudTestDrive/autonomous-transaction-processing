@@ -1,4 +1,4 @@
-[Go to Overview Page](readme.md)
+[Go to Overview Page](README.md)
 
 ![](images/customer.logo2.png)
 
@@ -165,5 +165,5 @@ You now have created your first Autonomous Transaction Processing Cloud instance
 
 ------
 
-[Go to Overview Page](readme.md)
+[Go to Overview Page](README.md)
 
