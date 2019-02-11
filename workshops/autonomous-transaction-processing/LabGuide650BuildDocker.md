@@ -11,6 +11,8 @@ In this lab, you’ll learn how to build a Docker image for a Node.js REST servi
 
 Let’s get started! 
 
+## Steps
+
 ### Step 1: Configure the connection to your OCIR Docker Repository
 
 Open your project in Develoepr Cloud, and follow the steps below:
@@ -22,8 +24,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 - In the Dialog Box, enter following parameters
 
   - Registry Name: **MyOCIR**
-  - Registry URL: fill in the URL of your OCI Repository.  Example for an instance based in Ashburn: 
-    **https://iad.ocir.io**  , but replace the "iad" by the correct code : **phx** for Phenix, **fra** for Frankfurt, **lhr** for London, ...
+  - Registry URL: fill in the URL of your OCI Repository.  Example for an instance based in Ashburn: https://iad.ocir.io  , but replace the "iad" by the correct code : **phx** for Phenix, **fra** for Frankfurt, **lhr** for London, ...
   - The **Username** is composed of {instance-name}/{username}, for example **gse00014089/api.user** 
   - Type your password **token** in the **Password** field - **attention, this is not the password** ! Typically a string looking like : i!co>5426CWaLZ&_Zh!r
 
@@ -66,14 +67,14 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 - From the **Add Builder** tab, select **Unix Shell** and enter the below commands in the **Script** field
 
-  - ```
+```
     chmod 400 atpkey
     scp -o 'StrictHostKeyChecking no' -i atpkey opc@130.61.120.69:/home/opc/jle/instantclient-basic-linux.x64-12.1.0.2.0.zip instantclient-basic-linux.x64-12.1.0.2.0.zip
     ls -al 
-    ```
+```
 
     Explanation* of these operations:
-
+    
     We need the library to access the ATP database, called **instantclient** in the environment where we will execute the Docker Build operation, so we can include it in the container.  Since this is a "Licensed" library that can be downloaded from the Oracle website by accepting the T&C's, we automate this operation by supplying a copy on a running Compute instance with the IP address 130.61.120.69.
 
 - Copy the file with the private key to access this instance called **atpkey** into your ATPDocker directory on your local machine.   This file is provided by your instructor.
@@ -118,9 +119,6 @@ Open your project in Develoepr Cloud, and follow the steps below:
   ![](images/650/image040.png)
 
 
-
-
-
 ### Step 4: Configure some scripts to point to your environment
 
 Before we can run the Build Job we just created, we need to parametrize some scripts to be pointing to your specific environment.
@@ -156,6 +154,12 @@ Before we can run the Build Job we just created, we need to parametrize some scr
     ```
 
   - This will allow us to simply set the environment variable $TNS_ADMIN to the correct path.
+
+- Finally, you need to ensure the docker image has the right connection information for connecting to the database.  Navigate to the folder **aone/scripts**, and locate the file called **dbconfig.js**
+
+  - In this file, enter the username, password and connect string of your ATP database.  This is just a crude way of simply setting up connectivity, this should be parametrized in a real-world deployment!
+  - The connect string is of the form **atp2_high**, where atp2 would be your datbase name.
+  - Hit the **Commit** button to save the modifications.
 
 - You are now ready to try out your Build Job in the next step!
 

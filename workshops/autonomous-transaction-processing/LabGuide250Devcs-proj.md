@@ -31,7 +31,7 @@ In this section, you’ll provision a complete development platform for your tea
 
 
 
-- Give your project a name that begins with your own name, such as John Dunbar OOW Hello, to make your project unique.  Then: 
+- Give your project a name that begins with your own name, such as **JohnDunbarATPLab**, to make your project unique.  Then: 
 
   - Enter a **Description**, such as **ATP Lab Project**.
 
@@ -62,19 +62,6 @@ In this section, you’ll provision a complete development platform for your tea
   - Tabs on the right side show you where the Git source code and Maven repositories are located.
   - Also on the right you can see project statistics, as well as the UI where you can manage team members.  Let’s take a look at that UI now. 
 
-- Scroll to the right and click the Team tab, then click +**New Member**.
-
-  ![](images/150/image007.png)
-
-- Select another team member from the drop-down list and click **Add**.
-
-  ![](images/150/image008.png)
-
-- Repeat steps 7 and 8 again so that your project team contains two other members besides yourself.
-
-  ![](images/150/image009.png)
-
-Each team member can now log in to the environment and start collaborating on project development.
 
 
 
@@ -91,7 +78,7 @@ Each team member can now log in to the environment and start collaborating on pr
 
   - Choose **Import Existing Repository** under **Initial content**
 
-  - Enter <https://github.com/CloudTestDrive/ATPDocker.git> in the text box: 
+  - Enter https://github.com/CloudTestDrive/ATPDocker.git in the text box: 
 
     ![](images/150/image10-2.png)
 
