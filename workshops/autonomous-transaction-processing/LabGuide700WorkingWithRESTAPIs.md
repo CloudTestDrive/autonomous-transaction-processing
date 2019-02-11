@@ -1,12 +1,12 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
+[Go to Overview Page](README.md)
 
-November 08, 2018
-</td>
-<td class="td-banner">
-# Lab 7: Working with REST APIs
-</td></tr><table>
+![](/Users/jleemans/dev/github/autonomous-transaction-processing/workshops/autonomous-transaction-processing/images/customer.logo2.png)
 
-## Introduction
+# Microservices on ATP
+
+## Part 10 - Working with REST APIs
+
+#### **Introduction**
 
 Oracle's Autonomous Transaction Processing cloud service provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized for transaction processing workloads. Oracle Autonomous Transaction Processing ( or ATP ) service provisions in a few minutes and requires very little manual ongoing administration and is therefore ideal for developers to build and test their applications.
 
@@ -263,10 +263,8 @@ You may build similar scripts using Python, Java, golang, Perl, C#, bash and Cur
 
 -   You are now ready to move to the next lab.
 
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
+
+
+------
+
+[Go to Overview Page](README.md)

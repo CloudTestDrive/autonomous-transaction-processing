@@ -1,12 +1,12 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
+[Go to Overview Page](README.md)
 
-November 08, 2018
-</td>
-<td class="td-banner">
-# Lab 6: Configure Java with ATP
-</td></tr><table>
+![](/Users/jleemans/dev/github/autonomous-transaction-processing/workshops/autonomous-transaction-processing/images/customer.logo2.png)
 
-## Introduction
+# Microservices on ATP
+
+## Part 6: Configure Java with ATP
+
+#### **Introduction**
 
 Autonomous Transaction Processing provides all of the performance of the market-leading Oracle Database in an environment that is tuned and optimized for transaction processing workloads. Oracle Autonomous Transaction Processing (or ATP) service provisions in a few minutes and requires very little manual ongoing administration.
 
@@ -298,10 +298,10 @@ You have now successfully connected your Java app to Autonomous Transaction Proc
 
 -   You are now ready to move to the next lab.
 
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>
+
+
+
+
+------
+
+[Go to Overview Page](README.md)

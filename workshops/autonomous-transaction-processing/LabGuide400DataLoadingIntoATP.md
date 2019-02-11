@@ -1,12 +1,12 @@
-<table class="tbl-heading"><tr><td class="td-logo">![](images/obe_tag.png)
-November 08, 2018
-</td>
-<td class="td-banner">
+[Go to Overview Page](README.md)
 
-# Lab 4: Data Loading into ATP
-</td></tr><table>
+![](/Users/jleemans/dev/github/autonomous-transaction-processing/workshops/autonomous-transaction-processing/images/customer.logo2.png)
 
-## Introduction
+# Microservices on ATP
+
+
+## Part 4: Data Loading into ATP
+#### **Introduction**
 
 In this lab, you will be creating a few tables and inserting data into the ATP database using the CI/CD features of Developer Cloud.  We'll use the Build engine of DevCS to set up a flow that will create the necessary objects in the database, and insert data into the tables.  In case these elements are changed in the repository, the script will trigger again and re-create the database elements.
 
@@ -14,7 +14,7 @@ In real life, you would want to set up a more sophisticated logic to manage your
 
 
 
-## Objectives
+#### **Objectives**
 
 - Set up your ATP Wallet in Developer Cloud
 - Create and run a Build to create your database objects
@@ -24,7 +24,7 @@ In real life, you would want to set up a more sophisticated logic to manage your
 
 ## Steps
 
-### **STEP 1: Set up your ATP Wallet in Developer Cloud**
+### STEP 1: Set up your ATP Wallet in Developer Cloud
 
 - In the ATP Connection For this lab, you downloaded the ATP Connection wallet zip file.  On your laptop, move this file into the folder "ATPDocker" you created when you cloned the git repository.
 

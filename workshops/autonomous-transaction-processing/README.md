@@ -30,23 +30,23 @@ In case you are running this lab on your own Cloud Tenancy, you might need to go
 
 This lab is composed of the steps outlined below.  Please walk through the various labs in a sequential order, as the different steps depend on each other:
 
-- **Step 1:** [Provisioning an Autonomous Transaction Processing Database Instance](LabGuide100ProvisionAnATPDatabase.md)  using the OCI Console (manual).
+- **Part 1:** [Provisioning an Autonomous Transaction Processing Database Instance](LabGuide100ProvisionAnATPDatabase.md)  using the OCI Console (manual).
 
   Note: Creation of the ATP via Terraform is also an option.   Detailed instructions will be added in the next iteration
 
-- **Step 2:** [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
+- **Part 2:** [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
 
-- **Step 3:** [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
+- **Part 3:** [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
 
-- **Step 4:** [Create and populate the Database objects](LabGuide400DataLoadingIntoATP.md) in your ATP database with Developer Cloud
+- **Part 4:** [Create and populate the Database objects](LabGuide400DataLoadingIntoATP.md) in your ATP database with Developer Cloud
 
-- *Optional Step 5* : [Configure an OCI Compute Instance and set up a node.js application](LabGuide500Configurenode.jsAppWithATP.md) to connect to the ATP database
-- *Optional Step 6* : [Configure an OCI Compute Instance and set up Java with ATP:](LabGuide600ConfigureJavaAppWithATP.md) Learn how to build a linux Java application server and connect it to an Oracle ATP database service
-- **Step 6:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
-- **Step 7:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create)
-- **Step 8:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker)
+- *Optional Part 5* : [Configure an OCI Compute Instance and set up a node.js application](LabGuide500Configurenode.jsAppWithATP.md) to connect to the ATP database
+- *Optional Part 6* : [Configure an OCI Compute Instance and set up Java with ATP:](LabGuide600ConfigureJavaAppWithATP.md) Learn how to build a linux Java application server and connect it to an Oracle ATP database service
+- **Part 7:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
+- **Part 8:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create)
+- **Part 9:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker)
 
-- *Optional Step 9* : [Working with REST APIs](LabGuide700WorkingWithRESTAPIs.md): generate REST calls to the Oracle Cloud Infrastructure using node.js
+- *Optional Part 10* : [Working with REST APIs](LabGuide700WorkingWithRESTAPIs.md): generate REST calls to the Oracle Cloud Infrastructure using node.js
 
 ---
 

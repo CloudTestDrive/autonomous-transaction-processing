@@ -4,7 +4,7 @@
 
 # Microservices on ATP
 
-## Setup your Managed Kubernetes Instance
+## Part 8: Setup your Managed Kubernetes Instance
 
 This Lab describes how to instantiate an **Oracle Managed Kubernetes cluster using Terraform**, including all the required network elements such as VNC's, subnets and access lists.
 
@@ -100,7 +100,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 
 
-### Collect Infrastructure Info for your environment: ###
+### Step 5: Collect Infrastructure Info for your environment: ###
 
 You need to collect a series of OCID's from your instance in order for Terraform to access your instance:
 - Tenancy OCID
@@ -134,7 +134,7 @@ Screen shots of the various locations to find this information
 
 
 
-### Set the Terraform parameters and run the script ###
+### Step 6: Set the Terraform parameters and run the script ###
 
 - Open a command prompt on your local machine and navigate to the **terraform** folder in the ATPDocker git repository folder
 

@@ -3,7 +3,7 @@
 ![](images/customer.logo2.png)
 # Microservices on ATP #
 
-## Part 2 - Setting up your Developer Cloud environment ##
+## Part 3 - Setting up your Developer Cloud environment ##
 
 ## Introduction ##
 
@@ -21,7 +21,7 @@ Let’s get started!
 
 ## Steps
 
-### Milestone 1: Create a project environment for your team
+### Step 1: Create a project environment for your team
 
 In this section, you’ll provision a complete development platform for your team by leveraging DevCS’s web interface.
 
@@ -78,7 +78,7 @@ Each team member can now log in to the environment and start collaborating on pr
 
 
 
-### Milestone 2:  Fetch and review code from the Git repository
+### Step 2:  Fetch and review code from the Git repository
 
 - On the right side of the home page, click **New Repository**
 
@@ -104,7 +104,7 @@ Each team member can now log in to the environment and start collaborating on pr
 
 
 
-### Milestone 3:  Cloning your repository on your local machine
+### Step 3:  Cloning your repository on your local machine
 
 In order to easily update and upload files into your Developer repository, we will clone the newly created DevCS repository onto your machine.
 

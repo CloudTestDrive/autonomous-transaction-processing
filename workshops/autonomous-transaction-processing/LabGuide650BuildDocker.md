@@ -3,7 +3,7 @@
 ![](images/customer.logo2.png)
 # Microservices on ATP
 
-## Part 6: Build a Container image with the aone application runing on ATP
+## Part 7: Build a Container image with the aone application runing on ATP
 
 #### **Introduction**
 
@@ -11,7 +11,7 @@ In this lab, you’ll learn how to build a Docker image for a Node.js REST servi
 
 Let’s get started! 
 
-### Milestone 1: Configure the connection to your OCIR Docker Repository
+### Step 1: Configure the connection to your OCIR Docker Repository
 
 Open your project in Develoepr Cloud, and follow the steps below:
 
@@ -33,7 +33,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   - ![](images/650/im02.png)
 
-### Milestone 2: Configure the Docker build job for building your container - create the job and get required libraries
+### Step 2: Configure the Docker build job for building your container - create the job and get required libraries
 
 - Click **Build** in the left nav bar, then click **New Job**. 
 
@@ -68,7 +68,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   - ```
     chmod 400 atpkey
-    scp -o 'StrictHostKeyChecking no' -i atpkey opc@130.61.120.69:/home/opc/jle/instantclient-basic-linux.x64-12.1.0.2.0.zip instantclient-basic-linux.x64-12.1.0.2.0.jj.zip
+    scp -o 'StrictHostKeyChecking no' -i atpkey opc@130.61.120.69:/home/opc/jle/instantclient-basic-linux.x64-12.1.0.2.0.zip instantclient-basic-linux.x64-12.1.0.2.0.zip
     ls -al 
     ```
 
@@ -88,7 +88,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 
 
-### Milestone 3: Configure the Docker build job for building your container - Execute the Docker commands
+### Step 3: Configure the Docker build job for building your container - Execute the Docker commands
 
 - Click the **Builders** tab. 
 
@@ -98,7 +98,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
     ![](images/650/image038.png)
 
 
-  
+
 
 - From the **Add Builder** drop-down, select **Docker Builder->Docker build**. 
 
@@ -121,7 +121,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 
 
-### Milestone 4: Configure some scripts to point to your environment
+### Step 4: Configure some scripts to point to your environment
 
 Before we can run the Build Job we just created, we need to parametrize some scripts to be pointing to your specific environment.
 
@@ -161,7 +161,7 @@ Before we can run the Build Job we just created, we need to parametrize some scr
 
 
 
-### Milestone 5: Run the Build Job
+### Step 5: Run the Build Job
 
 Before we move on, we want to ensure the job we just created works correctly. 
 
