@@ -26,225 +26,99 @@ In real life, you would want to set up a more sophisticated logic to manage your
 
 ### **STEP 1: Set up your ATP Wallet in Developer Cloud**
 
-In the ATP Connection For this lab, you will need a handful of data files.  Click <a href="./files/datafiles.zip" target="_blank">here</a> to download a zipfile of the 2 sample data files for you to upload to the object store. Unzip it to a directory on your local computer.
+- In the ATP Connection For this lab, you downloaded the ATP Connection wallet zip file.  On your laptop, move this file into the folder "ATPDocker" you created when you cloned the git repository.
 
-You will see:
-- Customer data: **customers.csv**
-- Channel data: **channels.csv**
+- Unzip the file, but leave the original zip file in the same location.  You will be needing both the .zip fil as well as the unzipped directory.
+- Example result for an ATP database named "ATP2":
+- ![](./images/400/wallet.png)
 
-### **STEP 2: Create target tables for data loading**
+- On the command line, add the new files to the git repository, commit them and push them to the Developer Cloud with the following commands :
 
-- Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_tables.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. Take a moment to examine the script. Then click the **Run Script** button to run it.
+```bash
+git add .
+git commit -m "Add wallet"
+git push
+```
 
- ![](./images/400/Picture400-1.png)
 
- -   If you want, you can compare your output to <a href="./scripts/300/create_tables_output.txt" target="_blank">this expected output.</a>  It is expected that you may get ORA-00942 errors during the DROP TABLE commands, but you should not see any other errors.
 
- Note that you do not need to specify anything other than the list of columns when creating tables in the SQL scripts. You can use primary keys and foreign keys if you want, but they are not required.
+- Your wallet is now visible in Developer Cloud - you might have to refresh your browser window to see the changes
 
-### **STEP 3: Loading Data using the Data import wizard in SQL Developer**
+![](./images/400/wallet_added.png)
 
-- Expand ‘**Tables**’ in your user schema object tree. If you don't see any tables, click on the refresh icon (two curved arrows) to refresh the table list.  You will see all the tables you have created previously. Select table **CHANNELS**. Clicking the right mouse button opens the context-sensitive menu in SQL Developer; select ‘**Import Data**’:
 
-![](./images/400/Picture400-2.png)
 
-![](./images/400/Picture400-3.png)
+### **STEP 2: Create and load your data in the database**
 
-- The Data Import Wizard is started. Enter the following information:
+- In Developer Cloud, navigate to the "Builds" tab and select **+Create Job**.
+  - Enter a name : **CreateDBObjects**
+  - Select the Software Template you created, for example **OKE**
+  - Hit **Create Job**
 
-    - Select **Local File** as source for the data load
+![](./images/400/new_job.png)
 
-    - Click the browse button and navigate to the channels.csv file (you extracted this file from the zip file you downloaded at the start of this lab).
 
-After entering this information, you can preview the data and select the appropriate file formats. You will see that the data preview is interactive and changes according to your selection.
 
-When you are satisfied with the file content view, click **NEXT**.
+- Add a  GIT Source repository
 
-![](./images/400/snap0014654.jpg)
+![](./images/400/add_src.png)
 
-- On Step 2 of the Import Wizard, you control the import method and parameters. Leave the Import Method as **Insert**. Click **NEXT**.
+- Select your repository from the list
+- Do **not** select the Automatic build on Commit
 
-![](./images/400/snap0014655.jpg)
 
-- The Choose Columns screen lets you select the columns you want to import. Leave the defaults and click **NEXT**.
 
-- The column definition screen shows you whether the sample data violates any of the existing column definitions of table CHANNELS (for a load into a new table you would select the column names and data types for the new table). Click **NEXT**.
+![](./images/400/config_source.png)
 
-![](./images/400/snap0014656.jpg)
 
-- The final screen reflects all your choices made in the Wizard. Click **FINISH** to load the data into table CHANNELS.
 
-![](./images/400/snap0014657.jpg)
+- Select the tab **Steps** to add a **SQLcl** build step from the dropdown
 
+ ![](./images/400/add_step.png)
 
-### **STEP 4: Setup the OCI Object Store**
 
-- Login to your Oracle Cloud Infrastructure console.
 
-![](images/400/snap0014296.jpg)
+- Fill in the parameters:
+  - username of the ATP instance : **admin**
+  - password of the ATP instance
+  - your wallet .zip file
+  - your connect string, for example **atp2_high**, where atp2 is the name of the database in this example
+  - the sql file containing the create script: **aone/create_schema.sql**
 
-- Click on **Menu** then Object Storage and selct Object Storage
 
-![](images/400/snap0014297.jpg)
 
-#### In order to create a New Bucket in Object Storage we need to select a Compartment from List Scope.
+![](./images/400/step_details.png)
 
-- Choose the Demo compartment in the **COMPARTMENT** drop-down if it is not already choosen.
+ -   Now save your Build Config and hit the **Build Now** button.  After a successfull build you should see following screen :
 
-![](images/400/snap0014298.jpg)
+![](./images/400/build_result.png)
 
-- Create a Bucket for the Object Storage
+- You can check the detailed content of the SQL execution in the log file of the build job.
 
-In OCI Object Storage, a bucket is the terminology for a container of multiple files.
+![](./images/400/log_file.png)
 
-- Click the **Create Bucket** button:
+- You can now re-connect with SQLDeveloper to your database and verify the objects were created correctly.
 
-![](images/400/snap0014299.jpg)
 
- - **Name your bucket**
 
-![](images/400/snap0014300.jpg)
+### **STEP 3: Set up a DeleteDBObjects job** and automate a Pipeline
 
-Oracle Cloud Infrastructure offers two distinct storage class tiers to address the need for both performant, frequently accessed "hot" storage, as well as less frequently accessed "cold" storage. Storage tiers help you maximize performance where appropriate and minimize costs where possible.
+- Repeat the steps from the last step to create a second job, called **DeleteDBObjects**.  When hitting the **Create Job** button, you can choose **Copy Existing Job** and select your CreateDBObjects Job.  
+- Now just change the script to execute in the DeleteDBObjects job : change **aone/create_schema.sql** into **delete_schema.sql**.
+- Run your DeleteDbObjects job manually to check it is working as expected.
+- Now go to the "Pipeline" tab and create a new pipeline called **DBObjects**
+- Drag and drop first the DeleteDBObjects job, then the CreateDBObjects job onto the canvas, and link them together.  
+- You can now edit the DeleteDBObjects to trigger automatically when a change in the repository is detected.  This will trigget the pipeline, recreating the DB objects.
 
-Use **Object Storage** for data to which you need fast, immediate, and frequent access. Data accessibility and performance justifies a higher price point to store data in the Object Storage tier.
 
-Use **Archive Storage** for data to which you seldom or rarely access, but that must be retained and preserved for long periods of time. The cost efficiency of the Archive Storage tier offsets the long lead time required to access the data. For more information, see Overview of [Archive Storage](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
 
-You have an option to **Encrypt using Key Management**. Oracle Cloud Infrastructure Key Management provides you with centralized management of the encryption of your data. You can use Key Management to create master encryption keys and data encryption keys, rotate keys to generate new cryptographic material, enable or disable keys for use in cryptographic operations, assign keys to resources, and use keys for encryption and decryption.
+- You are now ready to move to the next lab.
 
- You can find more details on Key Management [here](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm).
 
- For this workshop please do not check **Encrypt using Key Management**.
 
-- Click **Create Bucket** button to create the bucket in Demo Compartment
 
-To learn more about the OCI Object Storage, check out this <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingbuckets.htm" target="_blank">documentation</a> .
 
-Upload File to your OCI Object Store Bucket
+------
 
-- Click on your **bucket name** to open it:
+[Go to Overview Page](README.md)
 
-![](images/400/snap0014301.jpg)
-
-- Click on the **Upload Object** button:
-
-![](images/400/snap0014302.jpg)
-
-- Using the browse button or drag-and-drop select the **customers.csv** file you downloaded earlier and click Upload Object:
-
-![](images/400/snap0014303.jpg)
-
-- The end result should look like this with customers.csv files listed under Objects:
-
-![](images/400/snap0014304.jpg)
-
-- Construct the URL of the File on your OCI Object Storage
-
-Construct the URL that points to the location of the customers.csv file staged in the OCI Object Storage. The URL is structured as follows. The values for you to specify are in bold:
-
- https://swiftobjectstorage.<**region_name**>.oraclecloud.com/v1/<**tenant_name**>/<**bucket_name**>/<**file_name**>
-
- region_name: Type in the region you have created your Object storage in.
-
- tenant_name: Type in your tenancy name.
-
- bucket_name: Type in your bucket name which you created in Object Storage.
-
- file_name: customers.csv
-
- In the below example of constructed URL, the region name is us-seattle-1, the tenant name is r1atpdemo6, and the bucket name is ATPLab. So the URL of the customers.csv file is:
-
- https://swiftobjectstorage.us-seattle-1.oraclecloud.com/v1/r1atpdemo6/ATPLab/customers.csv
-
- Yours would be different, please change the above mentioned details and save your URL.
-
-![](images/400/ConstructURLs.png) 
-
-- **Save** the URL you constructed to a note. We will use the URL in the following steps.
-
-#### Creating an Object Store Auth Token
-
-To load data from the Oracle Cloud Infrastructure(OCI) Object Storage you will need an OCI user with the appropriate privileges to read data (or upload) data to the Object Store. The communication between the database and the object store relies on the Swift protocol and the OCI user Auth Token.
-
-- Go back to the **OCI Console** in your browser. In the top menu, click the **Identity**, and then click **Users**. 
-    ![](./images/400/Create_Swift_Password_01.png)
-
--   Click the **user's name** to view the details.  Also, remember the username as you will need that in the next step.
-
-For this lab we will be using admin user.
-
-![](./images/400/Create_Swift_Password_02.png)
-
--   On the left side of the page, click **Auth Tokens**.
-
-    ![](./images/400/snap0015308.jpg)
-
--   Click **Generate Token**.
-
-    ![](./images/400/snap0015309.jpg)
-
--   Enter a friendly **description** for the token and click **Generate Token**.
-
-    ![](./images/400/snap0015310.jpg)
-
--   The new Auth Token is displayed. Click **Copy** to copy the Auth Token to the clipboard. Save this in a temporary notepad document for the next few minutes (you'll use it in the next step). **You can't retrieve the Auth Token again after closing the dialog box**.
-
-    ![](./images/400/snap0015311.jpg)
-
-#### Create a Database Credentials for your User
-
-In order to access data in the Object Store you have to enable your database user to authenticate itself with the Object Store using your OCI object store account and Auth token. You do this by creating a private CREDENTIAL object for your user that stores this information encrypted in your Autonomous Transaction Processing. This information is only usable for your user schema.
-
--   Connected as your user in SQL Developer, copy and paste <a href="./scripts/300/create_credential.txt" target="_blank">this code snippet</a> to SQL Developer worksheet.
-
-Specify the credentials for your Oracle Cloud Infrastructure Object Storage service: The username will be the **OCI username** (in our case it is **your email address**) and the OCI object store **Auth Token** you generated in the previous step.  In this example, the crediential object named **OBJ\_STORE\_CRED** is created. You reference this credential name in the following steps.
-
- ![](./images/400/snap0015312.jpg)
-
-<!-- -->
-
--    Run the script. 
-
-![](./images/400/Picture300-12.png)
-
-- Verify the script output. 
-
-![](./images/400/Picture400-20.png)
-
-
-- Now you are ready to load data from the Object Store.
-
-### **STEP 5: Load data from the Object Storage using DBMS_CLOUD**
-
- You can use the PL/SQL package DBMS_CLOUD directly to load the data from object store. This is the preferred choice for any load automation.
-
- - Connect as your user in SQL Developer, copy and paste <a href="./scripts/300/load_data.txt" target="_blank">this code snippet</a> to SQL Developer worksheet. We use the **copy\_data** procedure of the **DBMS\_CLOUD** package to copy the data (customers.csv) staged in your object store.
-
- - At the top of the script, specify the Object Store base URL in the definition of the **base\_URL** variable. You have constructed and saved the URL in the step "Construct the URLs of the Files on Your OCI Object Storage".
-
-![](./images/400/snap0014550.jpg)
-
-- For the **credential_name** parameter in the **copy\_data** procedure, it is the name of the credential you defined in the step "Create a Database Credential for Your User".  You probably don't need to change this.
-
--  For the **format** parameter, it is a list of DBMS_CLOUD options (which are documented <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/dbmscloud-reference.html">here</a>).
-
-- Run the script and verify Script output. 
-
-![](./images/400/snapScriptOutput.jpg)
-
-- Verify the data by clicking on CUSTOMERS table and Data tab in SQL Developer.
-
-![](./images/400/snapCustomerData.jpg)
-
-You have successfully loaded the sample data from Object storage to customers table using DBMS_CLOUD.
-
--   You are now ready to move to the next lab.
-
-<table>
-<tr><td class="td-logo">[![](images/obe_tag.png)](#)</td>
-<td class="td-banner">
-## Great Work - All Done!
-</td>
-</tr>
-<table>

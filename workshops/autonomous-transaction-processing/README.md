@@ -31,106 +31,27 @@ In case you are running this lab on your own Cloud Tenancy, you might need to go
 
 This lab is composed of the steps outlined below.  Please walk through the various labs in a sequential order, as the different steps depend on each other:
 
-- [Provisioning an Autonomous Transaction Processing Database Instance](LabGuide100ProvisionAnATPDatabase.md)  using the OCI Console (manual).
+- **Step 1:** [Provisioning an Autonomous Transaction Processing Database Instance](LabGuide100ProvisionAnATPDatabase.md)  using the OCI Console (manual).
 
-  Note: Creation of the ATP via Terraform is also an option.   detailed instructions will be added in the next iteration*
+  Note: Creation of the ATP via Terraform is also an option.   Detailed instructions will be added in the next iteration
 
-- [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
+- **Step 2:** [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
 
-- [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
+- **Step 3:** [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
 
+- **Step 4:** [Create and populate the Database objects](LabGuide400DataLoadingIntoATP.md) in your ATP database with Developer Cloud
 
+- *Optional Step 5* : [Configure an OCI Compute Instance and set up a node.js application](LabGuide500Configurenode.jsAppWithATP.md) to connect to the ATP database
+- *Optional Step 6* : [Configure an OCI Compute Instance and set up Java with ATP:](LabGuide600ConfigureJavaAppWithATP.md) Learn how to build a linux Java application server and connect it to an Oracle ATP database service
+- **Step 6:** [Build a Container image with the aone application runing on ATP](tbd)
+- **Step 7:** [Spin up a Managed Kubernetes environment with Terraform](tbd)
+- **Step 8:** [Deploy your container on top of your Kubernetes Cluster](tbd)
 
-
-
-
-
----
-
----
-
-
-
-
-
-
-## Lab 4: Data Loading into ATP
-
-**Key Objectives**:
-
-- Learn how to use the SQL Developer Data Import Wizard
-- Learn how to upload files to the OCI Object Storage
-- Learn how to define object store credentials for ATP
-- Learn how to create tables in your database
-- Learn how to load data from the Object Store
-
-**[Click here to run Lab 4](LabGuide400DataLoadingIntoATP.md)**
-
-## Lab 5: Configure node.js app with ATP
-
-**Key Objectives**:
-
-- Learn how to build a linux node.js application server and connect it to an Oracle ATP database service
-
-**[Click here to run Lab 5](LabGuide500Configurenode.jsAppWithATP.md)**
-
-## Lab 6: Configure Java with ATP
-
-**Key Objectives**:
-
-- Learn how to build a linux Java application server and connect it to an Oracle ATP database service
-
-**[Click here to run Lab 6](LabGuide600ConfigureJavaAppWithATP.md)**
-
-## Lab 7: Working with REST APIs
-
-**Key Objectives**:
-
-- Learn how to generate REST calls to the Oracle Cloud Infrastructure using node.js
-
-**[Click here to run Lab 7](LabGuide700WorkingWithRESTAPIs.md)**
-
-## Lab 8: Building microservices on ATP
-
-**Key Objectives**:
-
-- To build a docker container running node.js microservice
-- Deploy it on an ATP service
-
-**[Click here to run Lab 8](LabGuide800BuildingMicroservicesOnATP.md)**
-
-## Lab 9: Configure OCI-CLI
-
-**Key Objectives**:
-
-- Configure Oracle Cloud Infrastructure Command Line Interface
-- Run examples using OCI-CLI for Autonomous Transaction Processing database
-
-**[Click here to run Lab 9](LabGuide900ConfigureOCI-CLI.md)**
-
-
-## Lab 10: Mastering DevOps in the Oracle Cloud
-
-**Key Objectives**:
-
-- Connect Oracle ATP to Python
-- Connect Oracle ATP to Java
-- Connect Oracle ATP to Node
-- Utilize Terraform to control ATP
-- Utilize OCI-CLI to control ATP
-
-**[Click here to run Lab 11](LabGuide1000AppDev.md)**
-
-## Appendix
-
-**Key Objectives**:
-
-- Handy docker commands you may need
-
-**[Click here to go through Appendix](Appendix.md)**
-
-
+- *Optional Step 9* : [Working with REST APIs](LabGuide700WorkingWithRESTAPIs.md): generate REST calls to the Oracle Cloud Infrastructure using node.js
 
 ---
+
+
 
 [Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)
+
