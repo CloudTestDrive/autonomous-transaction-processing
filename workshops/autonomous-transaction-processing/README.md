@@ -16,14 +16,13 @@ To run these labs you will need access to an Oracle Cloud Account.  If you are p
 
 If you are running these labs on your own, please check out the instructions on the [Oracle Cloud Adventure page](https://cloudtestdrive.github.io/Trial.html) to learn how to get a [Trial account](https://myservices.us.oraclecloud.com/mycloud/signup?sourceType=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&SC=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&pcode=EMMK181016P00010) or how to set up your corporate UC subscription for this lab.
 
-### Preparation steps for this lab exercise - *<u>only for personal tenancies</u>*
+#### **Preparation steps for this lab exercise - *<u>only for personal tenancies</u>***
 
 In order to run this lab, you need to have a running instance of the Developer Cloud Service and an OKE Container Cluster in your cloud tenancy.  In case you are executing this lab on an environment provided by an instructor, this setup will most likely have been performed already.
 
-In case you are running this lab on your own Cloud Tenancy, you might need to go through the following steps:
+In case you are running this lab on your own Cloud Tenancy, you might need to go through the following step:
 
 - Setting up a Developer Cloud Instance: [click here for a guide](devcsconfig.md) describing these steps in detail.
-- Setting up a Container Cluster (OKE): [detailed instructions can be found on this location](tbd)
 
 
 
@@ -43,9 +42,9 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 - *Optional Step 5* : [Configure an OCI Compute Instance and set up a node.js application](LabGuide500Configurenode.jsAppWithATP.md) to connect to the ATP database
 - *Optional Step 6* : [Configure an OCI Compute Instance and set up Java with ATP:](LabGuide600ConfigureJavaAppWithATP.md) Learn how to build a linux Java application server and connect it to an Oracle ATP database service
-- **Step 6:** [Build a Container image with the aone application runing on ATP](tbd)
-- **Step 7:** [Spin up a Managed Kubernetes environment with Terraform](tbd)
-- **Step 8:** [Deploy your container on top of your Kubernetes Cluster](tbd)
+- **Step 6:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
+- **Step 7:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create)
+- **Step 8:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker)
 
 - *Optional Step 9* : [Working with REST APIs](LabGuide700WorkingWithRESTAPIs.md): generate REST calls to the Oracle Cloud Infrastructure using node.js
 
@@ -54,4 +53,3 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 
 [Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)
-
