@@ -1,6 +1,6 @@
 [Go to Overview Page](README.md)
 
-![](/Users/jleemans/dev/github/autonomous-transaction-processing/workshops/autonomous-transaction-processing/images/customer.logo2.png)
+![](images/customer.logo2.png)
 
 # Microservices on ATP
 

@@ -7,6 +7,7 @@
 ## Part 8: Setup your Managed Kubernetes Instance
 
 This Lab describes how to instantiate an **Oracle Managed Kubernetes cluster using Terraform**, including all the required network elements such as VNC's, subnets and access lists.
+#### **Introduction**
 
 If you are familiar with Terraform and Oracle OCI, you can simply perform following steps:
 
