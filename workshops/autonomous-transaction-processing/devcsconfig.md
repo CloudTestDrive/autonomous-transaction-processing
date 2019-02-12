@@ -85,6 +85,7 @@ A detailed explanation of these steps is provided in [this section of the Develo
   - Docker 1
   - Kubectl
   - OCIcli ==> this will prompt you to also install Python3
+  - SQLcl
 
 ![alt text](images/devcs/im06.png)
 
