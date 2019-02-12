@@ -180,8 +180,12 @@ Screen shots of the various locations to find this information
    To access the Kubernetes console:
    - kubectl proxy
    - Then navigate to   
-   http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+     http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
 
 
+
+
+
+---
 
 [Go to Overview Page](README.md)

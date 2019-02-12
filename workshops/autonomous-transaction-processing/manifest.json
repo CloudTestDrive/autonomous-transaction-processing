@@ -1,6 +1,6 @@
 {
     "workshop": {
-        "title": "Autonomous Transaction Processing: Self-Guided Hands-On Workshop",
+        "title": "Microservices on Autonomous Database and Container Engine Workshop",
         "description": "This workshop will show you how to use Oracle Autonomous Transaction Processing in the Oracle Public Cloud.",
         "labs": [
             {
@@ -63,7 +63,7 @@
                 "title": "Lab 9: Configure Oracle Cloud Infrastructure Command Line Interface",
                 "description": "Instructions to configure Oracle Cloud Infrastructure Command Line Interface"
             },
-            
+
             {
                 "number": "10",
                 "filename": "LabGuide1000AppDev.md",

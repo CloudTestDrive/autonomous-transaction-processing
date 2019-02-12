@@ -50,42 +50,17 @@ This guide is meant for new Developer Cloud Service instances (post June 2018) c
 
 ### Configuring your DevCS Instance ###
 
-Once the instance is available, you need to configure a few things to be able to create projects and run builds.  Please perform following steps to complete this configuration.
+Once the instance is available, you need to configure a few things to be able to create projects and run builds:
 
-- Open a second window where you navigate to the Cloud Services Dashboard
-- Open the Compute Classic Service Overview, and note down following elements :
-   - Service Instance ID
-   - Rest Endpoint
+- Create a dedicated user with specific privileges
+- Add a public key to the user profile
+- Create a group for DevCS users
+- Add a DevCS policy in the **root** compartment
+- Then configure the OCI connection using the references to these OCI objects you just created.
 
-![alt text](images/devcs/compute.png)
+You will use the **OCI** type of setup, please ignore the *OCI Classic* setup instructions.
 
-- Navigate back to the Dashboard, and now select the "Storage Classic" Service Overview.  Note down following element:
-   - Auth V1 Endpoint
-
-![alt text](images/devcs/storage.png)
-
-- Return to your initial window with the Developer Cloud Services, and click on the hamburger icon on the right of the newly created service.  Select "Access Service Instance".
-
-![alt text](images/devcs/access.png)
-
-- Now go to the "Organization" by clicking on the icon top right with your username initials
-
-![alt text](images/devcs/toOrg.png)
-
-- Navigate to the "Storage" configuration, and enter the storage parameters.  Test the connection to validate.
-   - Service-ID : ue the syntax "Storage-xxxxx" where xxxxx is your cloud instance name
-
-![alt text](images/devcs/storageConfig.png)
-
-![alt text](images/devcs/editStorage.png)
-
-
-
-- Now navigate to the "Virtual Machine configuration, and hit the **Configure Compute Account** button:
-
-![alt text](images/devcs/vmOverview.png)
-
-![alt text](images/devcs/configCompute.png)
+A detailed explanation of these steps is provided in [this section of the Developer Cloud Documentation](https://docs.oracle.com/en/cloud/paas/developer-cloud/csdcs/service-setup.html#GUID-0FCE0C4F-75F4-43BC-8699-EBE039DA5E7A).  Navigate to that page, then use the **Back** button of your browser to returrn to this location.
 
 
 
