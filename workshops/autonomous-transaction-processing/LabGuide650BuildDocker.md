@@ -3,7 +3,7 @@
 ![](images/customer.logo2.png)
 # Microservices on ATP
 
-## Part 7: Build a Container image with the aone application runing on ATP
+## Part 8: Build a Container image with the aone application runing on ATP
 
 #### **Introduction**
 
@@ -55,7 +55,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   ![](images/650/image036.png)
 
-- Select **ATPDocker.git** from the **Repository** drop-down.
+- Select your **Repository.git** from the **Repository** drop-down.
 
 - Select master from the **Branch** drop-down.
 
@@ -73,11 +73,14 @@ Open your project in Develoepr Cloud, and follow the steps below:
     ls -al 
 ```
 
-    Explanation* of these operations:
-    
-    We need the library to access the ATP database, called **instantclient** in the environment where we will execute the Docker Build operation, so we can include it in the container.  Since this is a "Licensed" library that can be downloaded from the Oracle website by accepting the T&C's, we automate this operation by supplying a copy on a running Compute instance with the IP address 130.61.120.69.
+​	![](images/650/image_unix.png)
+
+- Explanation of these operations:
+  We need the library to access the ATP database, called **instantclient** in the environment where we will execute the Docker Build operation, so we can include it in the container.  Since this is a "Licensed" library that can be downloaded from the Oracle website by accepting the T&C's, we automate this operation by supplying a copy on a running Compute instance with the IP address 130.61.120.69.
 
 - Copy the file with the private key to access this instance called **atpkey** into your ATPDocker directory on your local machine.   This file is provided by your instructor.
+
+  ![](images/650/image_key.png)
 
 - Upload the private key **atpkey** into the Developer repository as before by executing the appropriate git commands:
 
@@ -89,7 +92,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 
 
-### Step 3: Configure the Docker build job for building your container - Execute the Docker commands
+### Step 3: Add more steps to the build: Execute the Docker commands
 
 - Click the **Builders** tab. 
 
@@ -104,7 +107,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 - From the **Add Builder** drop-down, select **Docker Builder->Docker build**. 
 
   - Select the **MyOCIR** registry from the dropdown field of the  **Registry Host** field (should be pre-filled in)
-  - Type gse00014089/oowhol/nodejsmicro**jodu** in the **Image Name** field.  Replace **jodu** with the first two letters of your first and last name, respectively, and replace "gse00014089" by your instance name
+  - Type gse00014089/oowhol/atp2**jodu** in the **Image Name** field.  Replace **jodu** with the first two letters of your first and last name, respectively, and replace "gse00014089" by your instance name
   - In the **Source** radio buttons, click **Context root in Workspace**.
 
 - From the **Add Builder** drop-down, select **Docker Builder->Docker push**. 
@@ -112,7 +115,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   ![](images/650/im46.png)
 
-  
+- Make sure to check the **Full Image Name** displaying on the Docker Build and Docker Deploy steps, they should be the same !
 
 - Click **Save**.
 

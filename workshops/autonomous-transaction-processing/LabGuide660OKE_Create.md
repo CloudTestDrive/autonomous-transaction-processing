@@ -4,7 +4,7 @@
 
 # Microservices on ATP
 
-## Part 8: Setup your Managed Kubernetes Instance
+## Part 7: Setup your Managed Kubernetes Instance
 
 This Lab describes how to instantiate an **Oracle Managed Kubernetes cluster using Terraform**, including all the required network elements such as VNC's, subnets and access lists.
 #### **Introduction**
@@ -13,7 +13,7 @@ If you are familiar with Terraform and Oracle OCI, you can simply perform follow
 
 - Create a **Demo** compartment on your instance
 - Define the OKE required Policies (allow service OKE to manage all-resources in tenancy)
-- Create a non-SSO user with an API certificate
+- Create a non-SSO user with an API certificate and an Identity Token
 - Open a command prompt on your local machine and navigate to the **terraform** folder in the ATPDocker git repository folder
 - Edit the file terraform.tfvars and enter your instance OCID's on the first lines
 - run ```terraform init``` , `terraform plan` and `terraform apply` to spin up your infrastructure
@@ -92,7 +92,16 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/660/OkeUser.png)
 
+- 
+
+- Create an Auth Token for the user api.user
+
+    - Take care to copy the Token string in a file on your PC : you will nbeed it later, and you cannot retrieve it back from the console.
+
+        ![](images/660/Auth_token.png)
+
 - Terraform needs to be installed on your local machine.  
+
     - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
     - unzip the executable file in the directory of your choice
     - Add the terraform command to your path
@@ -173,12 +182,21 @@ Screen shots of the various locations to find this information
 
 - validate the resulting K8S infrastructure :
 
-   - export KUBECONFIG=./mykubeconfig
-   - kubectl version
-   - kubectl get nodes
+   - ```bash
+     export KUBECONFIG=./mykubeconfig
+     kubectl version
+     kubectl get nodes
+     ```
+
+     
 
    To access the Kubernetes console:
-   - kubectl proxy
+   - ```
+     kubectl proxy
+     ```
+
+     
+
    - Then navigate to   
      http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
 

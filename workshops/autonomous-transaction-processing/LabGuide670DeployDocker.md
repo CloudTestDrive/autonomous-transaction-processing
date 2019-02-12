@@ -7,7 +7,7 @@
 
 #### **Introduction**
 
-In this section we will create a second build job to run the container we created in Part 6 on the Kubernetes Cluster we set up in Step 7, and set up a pipeline to automate and link both jobs
+In this section we will create a second build job to run the container we created on the Kubernetes Cluster we set up.
 
 Let’s get started! 
 
@@ -64,9 +64,11 @@ Let’s get started!
 
   - Line 17: set the correct image location as you configured it in the BuildContainer job
 
-  - Example for datacenter in Frankfurt (**fra**), tenancy name **mytenancy**, repo path **myrepo** and the default atp2:latest container name: 
+  - Example for datacenter in Frankfurt (**fra**), tenancy name **mytenancy**, repo path **oowhol** and image name joduatp2:latest container name: 
 
-    `fra.ocir.io/mytenancy/myrepo/atp2:latest`
+    `fra.ocir.io/mytenancy/oowhol/joduatp2:latest`
+
+    ![](images/670/edit_yaml.png)
 
   - Use the **Commit** button to save your changes.
 
@@ -80,7 +82,7 @@ Let’s get started!
 
   - Line 4, 8, 13, 16, 25 and 33 : replace the string **atp2** with a string containing your initials, for example for "jle" : **jle-atp2**
 
-  IMAGE !!!!!!!!
+  ![](images/670/edit_yaml2.png)
 
   - Hit **Commit** to save your changes.
 
@@ -89,7 +91,7 @@ Let’s get started!
 - In the **Git** tab of Developer Cloud, open the file **kubescript.sh** by clicking on it, and go into editing mode by clicking on the small pencil in the upper right
 
   - On line 4 and 6, add your initials in front of the strings beginning with **atp2**
-  - ![](images/TODOOOOOOim53.png)
+  - ![](images/670/kubescript.png)
   - Hit **Commit** to save the changes
   - As you can see, this shell script refers to the actual Kubernetes deployment configuration file **atp2.yaml**.  
 
@@ -99,15 +101,13 @@ Let’s get started!
 
 - Wait for the job to finish, then check the build log:
 
-  - **ATTENTION : image to be updated**
-
   ![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/image067.png) 
 
 - Inspect the build job log file to validate correct execution
 
   - **ATTENTION : image to be updated**
 
-  ![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/image068.png)
+  ![](images/670/log_deploy.png)
 
 - Although we included a few commands in the build job to show the resulting state of the cluster, the best way to visualize this is by launching the **kubernetes Dashboard**.  This is explained in the next step.
 
@@ -272,13 +272,13 @@ In oder to see the application you just deployed, we need to construct the URL w
 
 - Here you can see the IP address and port where your application is running.  In the below example, you can enter the following URL to reach your application
 
-  http://xx.yy.zz:aaaaa
+  http://130.61.18.58:32163
 
-  IMAGE REQUIRED
+  ![alt text](images/670/service_detail.png)
 
-- When you entier this URL in your browser, you should see the below result:
+- When you enter this URL in your browser, you should see the below result:
 
-FINAL SCREEN WITH DB CONTNET DISPLAYS
+![alt text](images/670/result.png)
 
 
 
