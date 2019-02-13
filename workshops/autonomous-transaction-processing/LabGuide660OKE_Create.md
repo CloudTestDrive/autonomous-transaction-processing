@@ -180,6 +180,14 @@ Screen shots of the various locations to find this information
 
    - [Instructions to Install kubectl](https://github.com/CloudTestDrive/EventLabs/blob/master/AppDev/K8S/kubectl_install.md)
 
+
+
+### Step 6: Validate and connect to the Kubernetes cluster
+
+- In case you do not have kubectl installed on your machine, follow these steps:
+
+   - [Instructions to Install kubectl](https://github.com/CloudTestDrive/EventLabs/blob/master/AppDev/K8S/kubectl_install.md)
+
 - validate the resulting K8S infrastructure :
 
    - ```bash
@@ -188,9 +196,8 @@ Screen shots of the various locations to find this information
      kubectl get nodes
      ```
 
-     
+- To access the Kubernetes console:
 
-   To access the Kubernetes console:
    - ```
      kubectl proxy
      ```
@@ -201,6 +208,35 @@ Screen shots of the various locations to find this information
      http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
 
 
+- Set up a "Secret" to allow you to pull images from your private repository:
+
+  - Run the following command, where you need to insert your specific parameters:
+
+    ```bash
+    kubectl create secret docker-registry ocirsecret
+    --docker-server=<region-code>.ocir.io --docker-username='<tenancy-name>/<oci-username>' --docker-password='<oci-auth-token>' --docker-email='<email-address>'
+    ```
+
+    - **region-code** is for example **fra** for Frankfurt, **iad** for Ashburn, etc.  See [here](https://docs.cloud.oracle.com/iaas/Content/Registry/Concepts/registryprerequisites.htm#Availab) for details.
+    - **tenancy-name** is the name of your Cloud tenancy
+    - **oci-username** is the name of the **api.user** you just created
+    - **oci-auth-token** is the **Auth Token** you just created and noted down
+    - **email-address** is mandatory but not used, can be jdoe@acme.com
+
+  - Example command:
+
+    ```bash
+    kubectl create secret docker-registry ocirsecret
+    --docker-server=fra.ocir.io --docker-username='mytenancy/api.user' --docker-password='k]j64r{1sJSSF-;)K8' --docker-email='jdoe@acme.com'
+    ```
+
+    The result should be 
+
+    ```
+    secret/ocirsecret created
+    ```
+
+    
 
 
 
