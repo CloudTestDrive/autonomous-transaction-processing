@@ -36,21 +36,15 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 - **Part 2:** [Connecting to your Database](LabGuide200SecureConnectivityAndDataAccess.md) using the secure wallet
 
-- **Part 3:** [Setting up your Developer Cloud for this project](LabGuide250Devcs-proj.md)
+- **Part 3:** [Setting up your Developer Cloud project](LabGuide250Devcs-proj.md)
 
 - **Part 4:** [Create and populate the Database objects](LabGuide400DataLoadingIntoATP.md) in your ATP database with Developer Cloud
 
-- *Optional Part 5* : [Configure an OCI Compute Instance and set up a node.js application](LabGuide500Configurenode.jsAppWithATP.md) to connect to the ATP database
+- **Part 5:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create.md)
 
-- *Optional Part 6* : [Configure an OCI Compute Instance and set up Java with ATP:](LabGuide600ConfigureJavaAppWithATP.md) Learn how to build a linux Java application server and connect it to an Oracle ATP database service
+- **Part 6:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
 
-- **Part 7:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create.md)
-
-- **Part 8:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
-
-- **Part 9:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker.md)
-
-- *Optional Part 10* : [Working with REST APIs](LabGuide700WorkingWithRESTAPIs.md): generate REST calls to the Oracle Cloud Infrastructure using node.js
+- **Part 7:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker.md)
 
 ---
 
