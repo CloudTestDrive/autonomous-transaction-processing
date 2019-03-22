@@ -13,6 +13,8 @@ This page will guide you through the setup of a new Developer Cloud instance :
 
 This guide is meant for new Developer Cloud Service instances (post June 2018) cloud environments
 
+**ATTENTION** : if you are running this lab in a **Instructor-provided environment**, your Developer Cloud instance has already been created, **you can skip the steps on this page**.  A link to the instance will be provided by your instructor.
+
 ### Enable DevCS on your dashboard ###
 
 - Login to your cloud account and navigate to the dashboard

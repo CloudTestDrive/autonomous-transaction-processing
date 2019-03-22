@@ -48,23 +48,29 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 -  Click on **Create Compartment** button to start the compartment creation process
 
-![](./images/100/CreateCompartment.jpeg)
+![](./images/100/CreateCompartment.png)
 
 Enter the following in create Compartment window
 
 - **Name**: Enter a friendly name to idenitfy your compartment (To complete this workshop let us name compartment as **Demo**)
 - **Description**: Enter a description for the compartment
+- **Parent Company**
+  - For instructor-lead environments, select the Compartment provided (for example CTDOKE)
+  - For Trial or Customer accounts, select the root compartment.
 - Click on Create Compartment link 
 
 Managing Tags and Tag Namespaces: When you have many resources (for example, instances, VCNs, load balancers, and block volumes) across multiple compartments in your tenancy, it can become difficult to track resources used for specific purposes, or to aggregate them, report on them, or take bulk actions on them. Tagging allows you to define keys and values and associate them with resources. You can then use the tags to help you organize and list resources based on your business needs. For more information please click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm).
 
 ![](./images/100/CreateCompartment1.jpeg)
 
-![](./images/100/CreateCompartment3.jpeg)
+
 
 - You can verify the compartment created on Compartments page
 
-![](./images/100/CreateCompartment2.jpeg)
+
+
+
+
 
 
 ### **STEP 3: Create an ATP Instance**
@@ -77,7 +83,7 @@ Managing Tags and Tag Namespaces: When you have many resources (for example, ins
 
 ![](./images/100/Picture100-21.jpeg)
 
-- Select **Demo Compartment** 
+- Select the compartment you created previously 
 
 ![](./images/100/DemoComp.png)
 
@@ -87,7 +93,7 @@ Managing Tags and Tag Namespaces: When you have many resources (for example, ins
 
 -  This will bring up Create ATP Database screen where you specify the configurations of the instance
 
-![](./images/100/Picture100-24.jpeg)
+![](./images/100/Picture100-24.png)
 
 
 #### Note: Oracle Cloud Infrastructure allows logical isolation of users within a tenant through Compartments. This allows multiple users and business units to share a tenant account while being isolated from each other.
@@ -96,7 +102,7 @@ If you have chosen the compartment you do not have privileges on, you will not b
 
 More information about Compartments and Policies is provided in the OCI Identity and Access Management documentation [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm?tocpath=Services%7CIAM%7C_____13).
 
--  Verify Demo compartment is selected
+-  Verify your own compartment is selected
 
 ![](./images/100/Picture100-26.jpeg)
 
