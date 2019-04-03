@@ -169,6 +169,7 @@ Screen shots of the various locations to find this information
    - You should see 13 objects to be created
 
    - ![](images/660/terra_plan.png)
+   - **Attention:** you might get an error on the version of your kubernetes cluster.  The version of Kubernetes specified in the file "k8s.ft" might be a too old version as compared to the versions made available by the OKE service.  If you encounter this error, verify the available versions on the OKE console that are available.
 
 - run `terraform apply` to spin up your infrastructure
 
