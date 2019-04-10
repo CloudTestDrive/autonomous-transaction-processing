@@ -46,20 +46,22 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 ![](./images/100/Compartments.jpeg)
 
--  Click on **Create Compartment** button to start the compartment creation process
+
+
+-  If you are using a shared instance, with a compartment called **CTDOKE**, you can <u>skip the creation of a new compartment</u>, and use the **CTDOKE** compartment in the remainder of this lab.
+   -  ![](./images/100/ListCompartmentsCTDOKE.png)
+-  Otherwise, click on **Create Compartment** button to start the compartment creation process
 
 ![](./images/100/CreateCompartment.png)
 
 Enter the following in create Compartment window
 
-- **Name**: Enter a friendly name to idenitfy your compartment (To complete this workshop let us name compartment as **Demo**)
+- **Name**: Enter a friendly name to idenitfy your compartment, containing your initials
 - **Description**: Enter a description for the compartment
-- **Parent Company**
-  - For instructor-lead environments, select the Compartment provided (for example CTDOKE)
-  - For Trial or Customer accounts, select the root compartment.
-- Click on Create Compartment link 
+- **Parent Compartment**:  select the root compartment.
+- Click on the **Create Compartment** link 
 
-Managing Tags and Tag Namespaces: When you have many resources (for example, instances, VCNs, load balancers, and block volumes) across multiple compartments in your tenancy, it can become difficult to track resources used for specific purposes, or to aggregate them, report on them, or take bulk actions on them. Tagging allows you to define keys and values and associate them with resources. You can then use the tags to help you organize and list resources based on your business needs. For more information please click [here](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm).
+
 
 ![](./images/100/CreateCompartment1.jpeg)
 
@@ -106,7 +108,7 @@ More information about Compartments and Policies is provided in the OCI Identity
 
 ![](./images/100/Picture100-26.jpeg)
 
--  Specify a name for the instance
+-  Specify a name for the instance, for example containing your initials for easy reference
 
 ![](./images/100/Picture100-27.jpeg)
 

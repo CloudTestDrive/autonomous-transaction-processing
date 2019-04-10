@@ -57,6 +57,7 @@ Let’s get started!
     ```bash
     git add mykubeconfig
     git commit -m "Add kubeconfig"
+    git pull
     git push
     ```
 
@@ -264,19 +265,42 @@ REMARK: the screen you will get might look slightly different, as this depends o
 
 ### Step 8: Visualize the Service to obtain the URL of your application
 
-In oder to see the application you just deployed, we need to construct the URL where the container is listening.  Do do this : 
+In oder to see the application you just deployed, we need to construct the URL where the container is listening.  You can do this via the command line and kubectl, or via the Kubernetes dashboard.
 
-- Navigate to the **Services** menu
+Using the command line:
 
-- Click on the service called either **atp2** or **(your initials)-atp2**
+- ```
+  kubectl get nodes -o wide
+  
+  NAME        STATUS   ROLES   AGE   VERSION   INTERNAL-IP   EXTERNAL-IP     OS-IMAGE                  KERNEL-VERSION                   CONTAINER-RUNTIME
+  10.0.10.2   Ready    node    16h   v1.12.6   10.0.10.2     130.61.56.185   Oracle Linux Server 7.5   4.14.35-1818.3.3.el7uek.x86_64   docker://18.9.1
+  10.0.11.2   Ready    node    16h   v1.12.6   10.0.11.2     130.61.34.50    Oracle Linux Server 7.5   4.14.35-1818.3.3.el7uek.x86_64   docker://18.9.1
+  10.0.12.2   Ready    node    16h   v1.12.6   10.0.12.2     130.61.109.52   Oracle Linux Server 7.5   4.14.35-1818.3.3.el7uek.x86_64   docker://18.9.1
+  ```
 
-- Here you can see the IP address and port where your application is running.  In the below example, you can enter the following URL to reach your application
+  
 
-  http://130.61.18.58:32163
+- ```
+  kubectl get services
+  
+  NAME         TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+  atp2jle      NodePort    10.96.6.240   <none>        3050:31056/TCP   15h
+  kubernetes   ClusterIP   10.96.0.1     <none>        443/TCP          16h
+  ```
 
-  ![alt text](images/670/service_detail.png)
+  Now elect any of the external IP addresses of the nodes, and combine it with the external port of your service : in the above example : 130.61.56.185:31056
 
-- When you enter this URL in your browser, you should see the below result:
+You can obtain the same info using the Kubernetes dashboard:
+
+- Navigate to the **Cluster - Nodes** screen and select a node to get its external IP addres
+  - ![alt text](images/670/ExternalIP2.png)
+
+- Navigate to the **Discovery and Load Balancing - Services** menu to view the port
+  - ![alt text](images/670/ServicePort2.png)
+
+
+
+When you enter this URL in your browser, you should see the below result:
 
 ![alt text](images/670/result.png)
 
@@ -284,9 +308,13 @@ In oder to see the application you just deployed, we need to construct the URL w
 
 
 
-You have finished this part of the lab, navigate to the next step to continue!
+Congratulations, you have finished this lab !!!!
 
+- You created an Autonomous database and populated it with some tables and data
+- You created a Kubernetes cluster and deployed a container with a Node application
+- You accessed this application via your browser
 
+Because you did all this via a CI/CD chain, making a small change in the source code of your application will trigger the re-deployment and make your change immediately visible.
 
 ---
 [Go to Overview Page](README.md)

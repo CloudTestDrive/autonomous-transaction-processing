@@ -17,14 +17,15 @@ Let’s get started!
 
 Open your project in Develoepr Cloud, and follow the steps below:
 
-- Click **Docker Registry** in the left navigation bar, then click **Link External Repository**.
+- Click **Docker** in the left navigation bar, then click **Link External Repository**.
 
-  ![](images/650/im08.png)
+  ![](images/650/im08-2.png)
 
 - In the Dialog Box, enter following parameters
 
   - Registry Name: **MyOCIR**
-  - Registry URL: fill in the URL of your OCI Repository.  Example for an instance based in Ashburn: https://iad.ocir.io  , but replace the "iad" by the correct code : **phx** for Phenix, **fra** for Frankfurt, **lhr** for London, ...
+  - Registry URL: fill in the URL of your OCI Repository.  Example for an instance based in Frankfurt:
+     https://fra.ocir.io  , but replace the "fra" by the correct code : **phx** for Phenix,  **lhr** for London, ...
   - The **Username** is composed of {instance-name}/{username}, for example **gse00014089/api.user** 
   - Type your password **token** in the **Password** field - **attention, this is not the password** ! Typically a string looking like : i!co>5426CWaLZ&_Zh!r
 
@@ -45,7 +46,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   - Type Build and push Docker image to OCIR in the **Description** field 
 
-  - Select the build template you set up, for example **DockerOCIOKE** from the **Software Template** drop-down  
+  - Select the build template you set up, for example **OKE2** from the **Software Template** drop-down  
 
   - Click **Create Job**.
 
@@ -65,7 +66,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
   
 
-- From the **Add Builder** tab, select **Unix Shell** and enter the below commands in the **Script** field
+- Navigate to **Steps**, and use the **Add Step** button to select **Unix Shell** and enter the below commands in the **Script** field
 
 ```
     chmod 400 atpkey
@@ -94,9 +95,8 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 ### Step 3: Add more steps to the build: Execute the Docker commands
 
-- Click the **Builders** tab. 
+- Use the **Add Step** button and add a step of type **Docker Builder->Docker login**. 
 
-- From the **Add Builder** drop-down, select **Docker Builder->Docker login**. 
   - Use the dropdown of the field **Registry Host** to select the Repository configuration you just ceated (named **MyOCIR**.  The username and password field are automatically filled in now.
 
     ![](images/650/image038.png)
@@ -104,10 +104,13 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 
 
-- From the **Add Builder** drop-down, select **Docker Builder->Docker build**. 
+
+- Using the **Add Step** drop-down, select **Docker Builder->Docker build**. 
 
   - Select the **MyOCIR** registry from the dropdown field of the  **Registry Host** field (should be pre-filled in)
-  - Type gse00014089/oowhol/atp2**jodu** in the **Image Name** field.  Replace **jodu** with the first two letters of your first and last name, respectively, and replace "gse00014089" by your instance name
+  - The **Image Name** is composed as follows: <my_instance_name>/<your_repo_name>/<image_name>
+    - Example : oractdemeabdmnative/jle_repo/atp01
+    - Use your initials in the repo name to distinguish from other users
   - In the **Source** radio buttons, click **Context root in Workspace**.
 
 - From the **Add Builder** drop-down, select **Docker Builder->Docker push**. 
@@ -126,7 +129,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 
 Before we can run the Build Job we just created, we need to parametrize some scripts to be pointing to your specific environment.
 
-- Navigate to the **Git** page of your Develoepr project
+- Navigate to the **Git** page of your Developer project
 
 - Open the file **Dockerfile**, and hit the Edit button (pencil icon upper right) to change the file
 

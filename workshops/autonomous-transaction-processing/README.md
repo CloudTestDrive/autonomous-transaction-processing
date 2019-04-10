@@ -42,7 +42,7 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 - **Part 5:** [Spin up a Managed Kubernetes environment with Terraform](LabGuide660OKE_Create.md)
 
-- **Part 6:** [Build a Container image with the aone application runing on ATP](LabGuide650BuildDocker.md)
+- **Part 6:** [Build a Container image with the aone application running on ATP](LabGuide650BuildDocker.md)
 
 - **Part 7:** [Deploy your container on top of your Kubernetes Cluster](LabGuide670DeployDocker.md)
 

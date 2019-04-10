@@ -9,9 +9,8 @@
 This Lab describes how to instantiate an **Oracle Managed Kubernetes cluster using Terraform**, including all the required network elements such as VNC's, subnets and access lists.
 #### **Introduction**
 
-If you are familiar with Terraform and Oracle OCI, you can simply perform following steps:
+In this lab we will perform the steps described below.  In case you are using an Instructor-provided instance, the first 2 steps will already have been performed, but you can check to see the exact setup in your instance :
 
-- Create a **Demo** compartment on your instance
 - Define the OKE required Policies (allow service OKE to manage all-resources in tenancy)
 - Create a non-SSO user with an API certificate and an Identity Token
 - Open a command prompt on your local machine and navigate to the **terraform** folder in the ATPDocker git repository folder
@@ -19,35 +18,13 @@ If you are familiar with Terraform and Oracle OCI, you can simply perform follow
 - run ```terraform init``` , `terraform plan` and `terraform apply` to spin up your infrastructure
 - validate the resulting K8S infrastructure via `kubectl`, using the file **mykubeconfig** that was created 
 
-In the remainder of these lab steps,, you find a more detailed description of these steps, with screendumps and explanations where to find the various OCID's and how to install the required commands `terraform` and `kubectl` on your local machine.
+Below you find a detailed description of these steps, with screendumps and explanations where to find the various OCID's and how to install the required commands `terraform` and `kubectl` on your local machine.
 
-### **STEP 1**: Create a Compartment for your Kubernetes nodes
 
-Compartments are used to isolate resources within your OCI tenant. Role-based access policies can be applied to manage access to compute instances and other resources within a Compartment.
 
-- Click the **hamburger icon** in the upper left corner to open the navigation menu. Under the **Identity** section of the menu, click **Compartments**
+### **STEP 1**: Add a Policy Statement for OKE
 
-  [![img](https://github.com/CloudTestDrive/learning-library/raw/master/workshops/container-native-development-with-oke/images/200/LabGuide200-c32a35b9.png)](https://github.com/CloudTestDrive/learning-library/blob/master/workshops/container-native-development-with-oke/images/200/LabGuide200-c32a35b9.png)
-
-  
-
-  - If you already have a **Demo** compartment already, ***SKIP THIS STEP***. Otherwise, Click **Create Compartment**
-
-    
-
-    [![img](https://github.com/CloudTestDrive/learning-library/raw/master/workshops/container-native-development-with-oke/images/200/7.png)](https://github.com/CloudTestDrive/learning-library/blob/master/workshops/container-native-development-with-oke/images/200/7.png)
-
-    
-
-  - In the **Name** field, enter `Demo`. Enter a description of your choice. Click **Create Compartment**.
-
-    
-
-    [![img](https://github.com/CloudTestDrive/learning-library/raw/master/workshops/container-native-development-with-oke/images/200/LabGuide200-9341ed24.png)](https://github.com/CloudTestDrive/learning-library/blob/master/workshops/container-native-development-with-oke/images/200/LabGuide200-9341ed24.png)
-
-    
-
-### **STEP 2**: Add a Policy Statement for OKE
+- If you are using an Instructor provided instance, this policy will already be defined.
 
 - Before the Oracle managed Kubernetes service can create compute instances in your OCI tenancy, we must explicitly give it permission to do so using a policy statement. From the OCI Console navigation menu, choose **Identity->Policies**.
 
@@ -71,7 +48,9 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
 
 
-### STEP 3: Create an API user with a certificate
+### STEP 2: Create an API user with a certificate
+
+**ATTENTION** : if you are using an Instructor-provided instance, a user called **api.user** will already have been set up for you, and the keys, fingerprints and tokens of this user will be provided to you.
 
 - Add an API (non-SSO) user with an API key:
   - Navigate to the "Identity" , "Users" screen and add a user called "api.user"
@@ -92,7 +71,7 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
   ![](images/660/OkeUser.png)
 
-- 
+
 
 - Create an Auth Token for the user api.user
 
@@ -100,13 +79,17 @@ Compartments are used to isolate resources within your OCI tenant. Role-based ac
 
         ![](images/660/Auth_token.png)
 
-- Terraform needs to be installed on your local machine.  
+    
 
-    - Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
-    - unzip the executable file in the directory of your choice
-    - Add the terraform command to your path
-        - On Mac: export PATH=$PATH:`pwd`
-        - On Windows: go to System Steetings, Advanced, Environment Variables, and add the path to your Terraform directory 
+### Step 3: Set up Terraform on your local machine
+
+Terraform needs to be installed on your local machine.  
+
+- Go to the [Hashicorp Terraform website](https://www.terraform.io/downloads.html) to download the software for your OS
+- unzip the executable file in the directory of your choice
+- Add the terraform command to your path
+    - On Mac: export PATH=$PATH:`pwd`
+    - On Windows: go to System Steetings, Advanced, Environment Variables, and add the path to your Terraform directory 
 
 
 
@@ -150,33 +133,42 @@ Screen shots of the various locations to find this information
 
 - Edit the file terraform.tfvars and enter your instance OCID's on the first lines, using the information collected in the previous section
 
-- In case you do not have terraform installed on your machine, follow these steps:
+- Now edit the file **k8s.tf** and add your initials to the **name** of the kubernetes cluster:
 
-   - Download the appropriate Terraform package for your operating system from the [terraform.io downloads page](https://www.terraform.io/downloads.html).
-   - **Unzip** the file you downloaded into the folder ~/terraform. You can use the command line or a graphical zip program for this operation. 
-   - Add Terraform to your PATH in the **terminal window**  using the following command:
-
-   ```bash
-   export PATH=$PATH:`pwd`
+   ```
+   resource "oci_containerengine_cluster" "k8s_cluster" {
+   	compartment_id = "${var.compartment_ocid}"
+   	kubernetes_version = "v1.12.6"
+   	name = "k8s_cluster_atp_myInitials"
+   	vcn_id = "${oci_core_virtual_network.K8SVNC.id}"
    ```
 
-- run `terraform init` in this directory, all dependencies, including oci v3 should download
+- Edit the file **network.tf** and do the same for the **display_name** of the Virtual Network:
 
+```
+resource "oci_core_virtual_network" "K8SVNC" {
+  cidr_block     = "${var.VPC-CIDR}"
+  compartment_id = "${var.compartment_ocid}"
+  display_name   = "K8S-VNC-ATP-MyInitials"
+  dns_label      = "k8s"
+}
+```
+
+
+
+- Run `terraform init` in this directory, all dependencies, including oci v3 should download
 - ![](images/660/terra_init.png)
-
 - run `terraform plan` to validate your config
 
    - You should see 13 objects to be created
 
    - ![](images/660/terra_plan.png)
    - **Attention:** you might get an error on the version of your kubernetes cluster.  The version of Kubernetes specified in the file "k8s.ft" might be a too old version as compared to the versions made available by the OKE service.  If you encounter this error, verify the available versions on the OKE console that are available.
-
 - run `terraform apply` to spin up your infrastructure
 
    - ![](images/660/terra_plan.png)
 
    - type "yes"
-
 - In case you do not have kubectl installed on your machine, follow these steps:
 
    - [Instructions to Install kubectl](https://github.com/CloudTestDrive/EventLabs/blob/master/AppDev/K8S/kubectl_install.md)
@@ -197,6 +189,23 @@ Screen shots of the various locations to find this information
      kubectl get nodes
      ```
 
+   - If you execute the last command immediately after the creation of the cluster, you might get the following result:
+
+      - ```
+         No resources found.
+         ```
+
+   - In that case, wait a few minutes, you can re-execute the **get nodes** command untill you see something like the below:
+
+      - ```
+         NAME        STATUS   ROLES   AGE   VERSION
+         10.0.10.2   Ready    node    23s   v1.12.6
+         10.0.11.2   Ready    node    30s   v1.12.6
+         10.0.12.2   Ready    node    14s   v1.12.6
+         ```
+
+         
+
 - To access the Kubernetes console:
 
    - ```
@@ -205,7 +214,7 @@ Screen shots of the various locations to find this information
 
      
 
-   - Then navigate to   
+   - Then navigate in a browser to the following address:   
      http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
 
 
@@ -227,8 +236,7 @@ Screen shots of the various locations to find this information
   - Example command:
 
     ```bash
-    kubectl create secret docker-registry ocirsecret
-    --docker-server=fra.ocir.io --docker-username='mytenancy/api.user' --docker-password='k]j64r{1sJSSF-;)K8' --docker-email='jdoe@acme.com'
+    kubectl create secret docker-registry ocirsecret --docker-server=fra.ocir.io --docker-username='mytenancy/api.user' --docker-password='k]j64r{1sJSSF-;)K8' --docker-email='jdoe@acme.com'
     ```
 
     The result should be 
