@@ -70,7 +70,7 @@ A detailed explanation of these steps is provided in [this section of the Develo
 
 - On the left-side menu, select the top level **Organization** menu, then click on **Virtual Machines Templates** in the top menu.  Next you can hit the **Create Template** button.
 
-![alt text](images/devcs/newTemplate2.png)
+![alt text](images/devcs/NewTemplate2.png)
 
 
 
