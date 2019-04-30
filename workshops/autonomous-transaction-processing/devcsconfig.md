@@ -68,9 +68,9 @@ A detailed explanation of these steps is provided in [this section of the Develo
 
 ### Creating a Virtual Machine
 
-- Navigate to the VM Template menu and create a new template.
+- On the left-side menu, select the top level **Organization** menu, then click on **Virtual Machines Templates** in the top menu.  Next you can hit the **Create Template** button.
 
-![alt text](images/devcs/newTemplate.png)
+![alt text](images/devcs/newTemplate2.png)
 
 
 
@@ -81,24 +81,35 @@ A detailed explanation of these steps is provided in [this section of the Develo
 
 - Now select the template you just created (DockerOCIOKE), and add the required software packages by clicking on the **Configure Software** button.
 
-![alt text](images/devcs/im05.png)
+![alt text](images/devcs/im05-2.png)
 
 - Select the following packages:
-  - Docker 1
+  - Docker 17,2
   - Kubectl
   - OCIcli ==> this will prompt you to also install Python3
-  - SQLcl
+  - SQLcl 18
 
-![alt text](images/devcs/im06.png)
+![alt text](images/devcs/im06-2.png)
 
 
 
-- Finally, navigate to the **Virtual Machines** menu on the left, and hit the **New VM** button.
+- Finally, navigate to the **Build Virtual Machines** menu on the top menu, and hit the **+ Create VM** button.
 
-  ![alt text](images/devcs/im07.png)
+  ![alt text](images/devcs/im07-2.png)
 
+  
+  
+  In the dialog that pops up, enter following values:
+  
   - Choose **Quantity = 1**
-  - Select the template you just created: **DockerOCIOKE**
+  
+  - Select the **VM Template** you just created: **DockerOCIOKE**
+  
+  - Set the **Region** to **eu-Frankfurt-1**
+  
+  - Select the compute **Shape** : **VM.Standard2.2**
+  
+    ![alt text](images/devcs/im08.png)
 
 You finished all the steps to finalize the Developer Cloud setup.  Please use the "Back" button of your browser to return to the main tutorial.
 
