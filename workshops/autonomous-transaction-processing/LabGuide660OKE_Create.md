@@ -4,7 +4,7 @@
 
 # Microservices on ATP
 
-## Part 6: Setup your Managed Kubernetes Instance
+## Part 5: Setup your Managed Kubernetes Instance
 
 This Lab describes how to instantiate an **Oracle Managed Kubernetes cluster using Terraform**, including all the required network elements such as VNC's, subnets and access lists.
 #### **Introduction**
@@ -167,13 +167,10 @@ resource "oci_core_virtual_network" "K8SVNC" {
 - run `terraform apply` to spin up your infrastructure
 
    - ![](images/660/terra_plan.png)
-
-   - type "yes"
-- In case you do not have kubectl installed on your machine, follow these steps:
-
-   - [Instructions to Install kubectl](https://github.com/CloudTestDrive/EventLabs/blob/master/AppDev/K8S/kubectl_install.md)
-
-
+- type "yes"
+- Observe the resulting files that were created on your machine : 
+   - **terraform.tfstate**: this file contains the details of the created elements.  Terraform will require this file when you do an update to your configuration file and you want top apply this change to the infrastructure.
+   -  **mykubeconfig**: this is the config file that allows you to connect to your newly created Kubernetes cluster.  You will need it in the next steps to access the kubernetes management console.
 
 ### Step 6: Validate and connect to the Kubernetes cluster
 
