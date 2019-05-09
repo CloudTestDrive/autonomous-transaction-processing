@@ -67,9 +67,9 @@ In this section, you’ll provision a complete development platform for your tea
 
 ### Step 2:  Fetch and review code from the Git repository
 
-- On the right side of the home page, click **New Repository**
+- With the **Project Home** selected on the left menu, look to the right and select **Repositories**, then click **+ Create** button.
 
-  ![](images/150/image006.png)
+  ![](images/150/image006-2.png)
 
 - In the New Repository dialog, enter these details: 
   - Type **ATPDocker** in the **Name** field.  In case you are sharing a repository with other participants, add your initials at the end of the name, like for example **ATPDocker_JLE**

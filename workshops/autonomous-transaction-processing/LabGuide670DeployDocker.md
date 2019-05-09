@@ -170,11 +170,15 @@ $ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s h
 
 #### **Windows**
 
-To find out the latest stable version take a look at <https://storage.googleapis.com/kubernetes-release/release/stable.txt>
+To find out the latest stable version take a look at https://storage.googleapis.com/kubernetes-release/release/stable.txt
 
-For example if latest stable version is: **v1.8.4** then construct the download link in the following way: *https://storage.googleapis.com/kubernetes-release/release/VERSION_NUMBER/bin/windows/amd64/kubectl.exe*. Thus in case of **v1.8.4** the link looks like this:
+For example if latest stable version is: **v1.8.4** then construct the download link in the following way: 
 
-<https://storage.googleapis.com/kubernetes-release/release/v1.8.4/bin/windows/amd64/kubectl.exe>
+https://storage.googleapis.com/kubernetes-release/release/VERSION_NUMBER/bin/windows/amd64/kubectl.exe 
+
+Thus in case of **v1.8.4** the link looks like this:
+
+https://storage.googleapis.com/kubernetes-release/release/v1.8.4/bin/windows/amd64/kubectl.exe
 
 Once you have the executable binary add to your PATH variable.
 
@@ -182,7 +186,7 @@ Once you have the executable binary add to your PATH variable.
 set PATH=%PATH%;c:\download_folder\kubectl.exe
 ```
 
-Verify the installation using the version command.
+Verify the installation using the version command:
 
 ```
 C:\Users\pnagy>kubectl version
@@ -239,9 +243,9 @@ Starting to serve on 127.0.0.1:8001
 
 This command runs `kubectl` in a mode where it acts as a reverse proxy. It handles locating the apiserver and authenticating and make Dashboard available at the following link:
 
-<http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#%21/overview?namespace=default>.
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#%21/overview?namespace=default.
 
-For older versions of K8S, you might have to use this URL: <http://localhost:8001/ui>. Please note the UI can only be accessed from the machine where the proxy command is running.
+For older versions of K8S, you might have to use this URL: http://localhost:8001/ui. Please note the UI can only be accessed from the machine where the proxy command is running.
 
 The default port used by the proxy command is port 8001. If on your laptop this port is already in use by another application you can easily specify to use another port using following syntax:
 
@@ -265,7 +269,7 @@ REMARK: the screen you will get might look slightly different, as this depends o
 
 ### Step 8: Visualize the Service to obtain the URL of your application
 
-In oder to see the application you just deployed, we need to construct the URL where the container is listening.  You can do this via the command line and kubectl, or via the Kubernetes dashboard.
+In order to see the application you just deployed, we need to construct the URL where the container is listening.  You can do this via the command line and kubectl, or via the Kubernetes dashboard.
 
 Using the command line:
 
