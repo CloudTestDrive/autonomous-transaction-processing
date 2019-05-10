@@ -14,7 +14,7 @@ This lab will walk you through the steps to set up a CI/CD environment for devel
 
 To run these labs you will need access to an Oracle Cloud Account.  If you are participating in a live event, your instructor will provide you the required credentials.
 
-If you are running these labs on your own, please check out the instructions on the [Oracle Cloud Adventure page](https://cloudtestdrive.github.io/Trial.html) to learn how to get a [Trial account](https://myservices.us.oraclecloud.com/mycloud/signup?sourceType=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&SC=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&pcode=EMMK181016P00010) or how to set up your corporate UC subscription for this lab.
+If you are running these labs on your own, please get a [Trial account](https://myservices.us.oraclecloud.com/mycloud/signup?sourceType=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&SC=:ex:tb:::RC_EMMK181016P00010:Virtual_WS_DEV&pcode=EMMK181016P00010) or set up your corporate UC subscription for this lab.
 
 #### **Preparation steps for this lab exercise - *<u>only for personal tenancies</u>***
 
@@ -51,3 +51,11 @@ This lab is composed of the steps outlined below.  Please walk through the vario
 
 
 [Go to the Cloud Test Drive Welcomer Page](https://github.com/CloudTestDrive/EventLabs/blob/master/README.md)
+
+
+
+#### [License](LICENSE.md)
+
+Copyright (c) 2014, 2016 Oracle and/or its affiliates
+The Universal Permissive License (UPL), Version 1.0
+
