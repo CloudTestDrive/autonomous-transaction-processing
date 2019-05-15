@@ -15,7 +15,7 @@ In this lab we will configure a secure connection using Oracle SQL Developer.
 
 #### **Required Artifacts**
 
-- You have installed Oracle SQL Developer 18.3. If you do not have SQL Developer 18.3, you can download from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
+- You should have Oracle SQL Developer installed on your machine. If not, you can download the latest version from [here](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html).
 
 
 ## Steps

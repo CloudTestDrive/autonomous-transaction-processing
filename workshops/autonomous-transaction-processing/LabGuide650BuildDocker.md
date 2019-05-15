@@ -177,29 +177,29 @@ Before we move on, we want to ensure the job we just created works correctly.
 
 - Hit the **Build Now** button to kick off the build. 
 
-![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/im10.png)
+![](images/650/im10.png)
 
 If this is the very first time you invoke the executor, this might take some time (up to 10 minutes), as the Executioner needs to be instantiated and launched.  Consecutive builds will start almost immediately.
 
-![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/im11.png)
+![](images/650/im11.png)
 
 Once the job finished successfully, you should see something like this :
 
-![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/im13.png)
+![	](images/650/im13.png)
 
 - Navigate to your OCI console to check the container has indeed been uploaded
   - On the menu, select **Developer Services**, and then **Registry**
 
-![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/im12.png)
+![](images/650/im12.png)
 
 
 
 - You should see your container in the list, deployed just a few minutes ago
-  ![](/Users/jleemans/dev/github/EventLabs/AppDev/devcs-docker/images/im45.png)
+  ![](images/650/im45.png)
 
 
 
-You have finished this part of the lab, navigate to the nxt step to continue!
+You have finished this part of the lab, navigate to the next step to continue!
 
 
 
