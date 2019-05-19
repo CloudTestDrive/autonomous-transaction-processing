@@ -30,11 +30,19 @@ In real life, you would want to set up a more sophisticated logic to manage your
 - Unzip the file, but leave the original zip file in the same location.  You will be needing both the .zip fil as well as the unzipped directory.
 - Example result for an ATP database named "ATP2":
 - ![](./images/400/wallet.png)
-- On the command line, add the new files to the git repository, commit them and push them to the Developer Cloud with the following commands :
+- On the command line, add the new files to the git repository, commit them and push them to the Developer Cloud with the following commands:
 
 ```bash
+# Position yourself in the actual Git directory
+cd ATPDocker
+
+# add the new files to the git repository
 git add .
+
+# Commit the change with the appropriate comment
 git commit -m "Add wallet"
+
+# Push the change from your laptop back into the DevCS repository
 git push
 ```
 
@@ -51,6 +59,7 @@ git push
 - In Developer Cloud, navigate to the "Builds" tab and select **+Create Job**.
   - Enter a name : **CreateDBObjects**
   - Select the Software Template you created, for example **OKE**
+    - PS: If you are using an Oracle provided environment, your instructor will suggest the appropriate Template to use.  A VM with all the necessary software packages is OKE3.
   - Hit **Create Job**
 
 ![](./images/400/new_job.png)
@@ -87,7 +96,27 @@ git push
 
 ![](./images/400/step_details.png)
 
- -   Now save your Build Config and hit the **Build Now** button.  After a successfull build you should see following screen :
+ -   Now save your Build Config and hit the **Build Now** button.  
+
+In case this is the first build job in your environment, the startup of the Build engine might take up to 10 minutes to complete.  You will notice the build to be "Waiting for Executioner"
+
+![](./images/400/waiting.png)
+
+To extend the default shut-down timout of your build engines, navigate to the **Organization** (left menu), and the **Build Virtual Machines** (upper menu) and select the button **Sleep Timeout**.
+
+![](./images/400/timeout.png)
+
+On the resulting screen, set the timeout to 90 minutes
+
+![](./images/400/timeout3.png)
+
+You can also visualize the log file of your virtual machine, to check any errors you might encounter on this level: ![](./images/400/logs.png)
+
+
+
+Now navigate back to the Build job you launched.
+
+ -   After a successfull build you should see following screen :
 
 ![](./images/400/build_result.png)
 
