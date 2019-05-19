@@ -11,15 +11,17 @@ This page will guide you through the setup of a new Developer Cloud instance :
 - Creating an instance
 - Configuring the storage and Build parameters for your instance
 
-This guide is meant for new Developer Cloud Service instances (post June 2018) cloud environments
-
 **ATTENTION** : if you are running this lab in a **Instructor-provided environment**, your Developer Cloud instance has already been created, **you can skip the steps on this page**.  A link to the instance will be provided by your instructor.
 
-### Enable DevCS on your dashboard ###
+### Enable DevCS on your PaaS dashboard ###
 
-- Login to your cloud account and navigate to the dashboard
+- Login to your cloud account and navigate to the PaaS dashboard:
 
 ![alt text](images/devcs/dashboard.png)
+
+In case your cloud account is linked straight to the OCI dashboard, you need to use the following menu item on the left to reach the PaaS dashboard:
+
+![alt text](images/devcs/gotopaas.png)
 
 
 

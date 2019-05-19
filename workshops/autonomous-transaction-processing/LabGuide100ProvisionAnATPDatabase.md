@@ -22,13 +22,12 @@ This lab walks you through the steps to get started using the Oracle Autonomous 
 
 ### **STEP 1: Sign in to Oracle Cloud Infrastructure console**
 
-- Go to cloud.oracle.com, click Sign In to sign in with your Oracle Cloud account.
+- If you are running this lab on an instructor-provided environment, you will have the direct link to the OCI console in the **access document** that was provided to you.
+- Alternatively, go to **cloud.oracle.com**, click **Sign In** to sign in with your Oracle Cloud account.
 
-![](./images/100/signin.png)
+![](./images/100/signin2.png)
 
-- Enter your Cloud Account Name and click My Services.
-
-![](./images/100/cloudaccname.png)
+- Enter your Cloud Account Name and click Next.
 
 - Enter your Oracle Cloud username and password, and click Sign In.
 
