@@ -128,27 +128,7 @@ Now navigate back to the Build job you launched.
 
 
 
-### **STEP 3: Set up a DeleteDBObjects job** and automate a Pipeline
-
-- Repeat the steps from the last step to create a second job, called **DeleteDBObjects**.  When hitting the **Create Job** button, you can choose **Copy Existing Job** and select your CreateDBObjects Job.  
-
-- Now just change the script to execute in the DeleteDBObjects job : change **aone/create_schema.sql** into **delete_schema.sql**.
-
-- Run your DeleteDbObjects job manually to check it is working as expected.
-
-- Now go to the "Pipeline" tab and create a new pipeline called **DBObjects**
-
-  ![](./images/400/pipe1.png)
-
-- Drag and drop first the DeleteDBObjects job, then the CreateDBObjects job onto the canvas, and link them together.  
-
-- ![](./images/400/pipe2.png)
-
-- You can now edit the DeleteDBObjects to trigger automatically when a change in the repository is detected.  This will trigget the pipeline, recreating the DB objects.
-
-
-
-- You are now ready to move to the next lab.
+Congratulations, You are now ready to move to the next lab.
 
 
 
