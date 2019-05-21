@@ -79,19 +79,8 @@ Open your project in Develoepr Cloud, and follow the steps below:
 - Explanation of these operations:
   We need the library to access the ATP database, called **instantclient** in the environment where we will execute the Docker Build operation, so we can include it in the container.  Since this is a "Licensed" library that can be downloaded from the Oracle website by accepting the T&C's, we automate this operation by supplying a copy on a running Compute instance with the IP address 130.61.120.69.
 
-- Copy the file with the private key to access this instance called **atpkey** into your ATPDocker directory on your local machine.   This file is provided by your instructor.
-
-  ![](images/650/image_key.png)
-
-- Upload the private key **atpkey** into the Developer repository as before by executing the appropriate git commands:
-
-- ```bash
-  git add atpkey
-  git commit -m "private key"
-  git push
-  ```
-
-
+  
+  
 
 ### Step 3: Add more steps to the build: Execute the Docker commands
 
