@@ -97,7 +97,7 @@ Open your project in Develoepr Cloud, and follow the steps below:
 - Using the **Add Step** drop-down, select **Docker Builder->Docker build**. 
 
   - Select the **MyOCIR** registry from the dropdown field of the  **Registry Host** field (should be pre-filled in)
-  - The **Image Name** is composed as follows: <my_instance_name>/<your_repo_name>/<image_name>
+  - The **Image Name** is composed as follows: my_instance_name/your_repo_name/image_name
     - Example : oractdemeabdmnative/jle_repo/atp01
     - Use your initials in the repo name to distinguish from other users
   - In the **Source** radio buttons, click **Context root in Workspace**.
@@ -122,7 +122,7 @@ Before we can run the Build Job we just created, we need to parametrize some scr
 
 - Open the file **Dockerfile**, and hit the Edit button (pencil icon upper right) to change the file
 
-- On line 42, change the **COPY** comman to reflect the name of your wallet directory:
+- On line 17, change the **COPY** comman to reflect the name of your wallet directory:
 
   - For example, if your wallet folder is named **APT1**, replace the original line with the blow text:
 
